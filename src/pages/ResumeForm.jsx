@@ -4,21 +4,41 @@ import styles from './ResumeForm.module.css';
 export default function ResumeForm() {
   return (
     <div className={styles.formContainer}>
-      <div className={styles.Container1}>
+      <div className={styles.container1}>
         <form>
-            <div>
-            <label>Full name</label>
+            <div className={styles.formInput}>
+            <label >Full name</label>
             <input type='text' placeholder='Enter your Full name' />
             </div>
 
-            <div>
-            <label>Email Address</label>
-            <input type='email' placeholder='Enter your Full name' />
+            <div className={styles.formInput}>
+            <label >Email Address</label>
+            <input type='email' placeholder='Enter your email address' />
             </div>
 
-            <div>
-            <label>Email Address</label>
-            <input type='email' placeholder='Enter your Full name' />
+            <div className={styles.formInput}>
+            <label >Phone Number</label>
+            <input type='number' placeholder='Enter your phone number' />
+            </div>
+
+            <div className={styles.formInput}>
+            <label >Location</label>
+            <input type='text' placeholder='Enter your location' />
+            </div>
+
+            <div className={styles.formInput}>
+            <label >Profession</label>
+            <input type='text' placeholder='Enter your profession' />
+            </div>
+
+            <div className={styles.formInput}>
+            <label >LinkedIn Profile</label>
+            <input type='text' placeholder='Enter your linkedin profile' />
+            </div>
+
+            <div className={styles.formInput}>
+            <label >Personal Website</label>
+            <input type='text' placeholder='Enter your personal websie' />
             </div>
         </form>
       </div>

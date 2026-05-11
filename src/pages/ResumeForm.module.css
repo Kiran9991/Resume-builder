@@ -1,19 +1,41 @@
 .formContainer{
     height: 100%;
     width: 100%;
-    margin: 10px;
+    padding: 20px;
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
+    background-color: aquamarine;
 }
 
 .container1{
     background-color: rgb(226, 124, 124);
     height: 100%;
-    width: 50%;
+    width: 30%;
 }
 
 .container2{
     height: fit-content;
-    width: 50%;
     background-color: white;
+}
+
+.formInput {
+    padding: 5px;
+    width: 100%;
+    /* display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center; */
+}
+
+.formInput label {
+    padding: 5px;
+}
+
+.formInput input {
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+    width: 100%;
 }
