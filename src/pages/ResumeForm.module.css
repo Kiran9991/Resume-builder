@@ -9,9 +9,12 @@
 }
 
 .container1{
-    background-color: rgb(226, 124, 124);
+    background-color: white;
+    border-radius: 5px;
     height: 100%;
-    width: 30%;
+    width: 40%;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .container2{
@@ -21,7 +24,7 @@
 
 .formInput {
     padding: 5px;
-    width: 100%;
+    /* width: 100%; */
     /* display: flex;
     gap: 5px;
     justify-content: center;
@@ -33,9 +36,17 @@
 }
 
 .formInput input {
+    box-sizing: border-box;
     border: none;
+    border-radius: 10px;
     padding: 10px;
-    border-radius: 5px;
     margin: 5px;
     width: 100%;
+    border: 0.01px solid grey;
+}
+
+@media (max-width: 768px) {
+    .container1{
+        width: 100%;
+    }
 }
