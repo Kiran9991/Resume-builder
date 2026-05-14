@@ -24,25 +24,31 @@
 
 .formInput {
     padding: 5px;
-    /* width: 100%; */
-    /* display: flex;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
     gap: 5px;
-    justify-content: center;
-    align-items: center; */
 }
 
 .formInput label {
     padding: 5px;
+    box-sizing: border-box;
 }
 
 .formInput input {
     box-sizing: border-box;
     border: none;
-    border-radius: 10px;
+    border-radius: 0.5rem;
     padding: 10px;
-    margin: 5px;
     width: 100%;
-    border: 0.01px solid grey;
+    border: 1px solid #d1d5db;
+    transition: 0.3s ease;
+    outline: none;
+}
+
+.formInput input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px #3b82f6;
 }
 
 @media (max-width: 768px) {
