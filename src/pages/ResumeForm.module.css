@@ -6,11 +6,12 @@
     display: flex;
     justify-content: space-between;
     background-color: rgb(250, 248, 248);
+    gap: 30px;
 }
 
 .formSection{
     background-color: white;
-    border-radius: 5px;
+    border-radius: 0.5rem;
     height: 100%;
     width: 40%;
     padding: 10px;
@@ -19,8 +20,12 @@
 }
 
 .previewSection{
-    height: fit-content;
+    height: 100%;
+    width: 60%;
     background-color: white;
+    padding: 20px;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
 }
 
 .inputGroup {
@@ -60,4 +65,11 @@
     .formSection{
         width: 100%;
     }
+}
+
+.personalData{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }

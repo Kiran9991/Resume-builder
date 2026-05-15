@@ -42,8 +42,18 @@ export default function ResumeForm() {
             </div>
         </form>
       </div>
-      <div className={styles.previewSection}>
 
+      <div className={styles.previewSection}>
+        <div className={styles.personalData}>
+          <h3>Title</h3>
+          <ul>
+            <li>Email id</li>
+            <li>phone no.</li>
+            <li>Address</li>
+            <li>Linkedin url</li>
+            <li>personal website</li>
+          </ul>
+        </div>
       </div>
     </div>
   )
