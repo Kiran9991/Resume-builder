@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './ResumeForm.module.css';
+import ResumePreview from '../components/Resume Preview/ResumePreview';
 
 export default function ResumeForm() {
   return (
@@ -43,18 +44,7 @@ export default function ResumeForm() {
         </form>
       </div>
 
-      <div className={styles.previewSection}>
-        <div className={styles.personalData}>
-          <h3>Title</h3>
-          <ul>
-            <li>Email id</li>
-            <li>phone no.</li>
-            <li>Address</li>
-            <li>Linkedin url</li>
-            <li>personal website</li>
-          </ul>
-        </div>
-      </div>
+      <ResumePreview/>
     </div>
   )
 }

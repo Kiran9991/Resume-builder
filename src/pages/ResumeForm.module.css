@@ -23,9 +23,8 @@
     height: 100%;
     width: 60%;
     background-color: white;
-    padding: 20px;
+    padding: 30px;
     border: 1px solid #d1d5db;
-    border-radius: 0.5rem;
 }
 
 .inputGroup {
@@ -68,8 +67,48 @@
 }
 
 .personalData{
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    border-bottom: 2px solid rgb(54, 151, 54);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+} h1 {
+    padding: 10px;
+    color: rgb(54, 151, 54);
+} 
+
+.p1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+} span {
+    padding: 5px;
+    display: inline-block;
 }
+
+.s1 {
+    margin-bottom: 15px;
+} h2 {
+    padding: 10px 0;
+}
+
+.jobTitle{
+    padding-left: 20px;
+    border-left: 3px solid grey;
+} h3 {
+    padding-bottom: 5px;
+}
+
+.jobRoleTitle {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.duration {
+    color: gray;
+}
+
