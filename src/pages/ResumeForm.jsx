@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './ResumeForm.module.css';
-import { DownloadPdf } from '../components/Resume Preview/ResumePreview';
+import { PrintPdf } from '../components/Resume Preview/ResumePreview';
 
 import ResumePreview from '../components/Resume Preview/ResumePreview';
 
@@ -10,13 +10,14 @@ export default function ResumeForm() {
     <div className={styles.resumeContainer}>
 
       <div className={styles.btnSection}>
-        <button className={styles.downloadbtn} onClick={DownloadPdf}>Download</button>
-
-        <button>Share</button>
-        <button>Save</button>
+        
+        <button className={styles.share} onClick={PrintPdf}>Share</button>
+        <button className={styles.public}>Public</button>
+        <button className={styles.downloadbtn}>Download</button>
       </div>
 
       <div className={styles.resumeForm}>
+        
       <div className={styles.formSection}>
         <form>
             <div className={styles.inputGroup}>

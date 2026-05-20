@@ -12,12 +12,36 @@
     justify-content: flex-end;
     padding-bottom: 20px;
     gap: 10px;
-} button {
-    padding: 5px;
-    cursor: pointer;
-}
+} 
 
 .downloadbtn{
+    background-color: rgb(181, 236, 181);
+    color: green;
+}
+
+.downloadbtn:hover{
+    transition: 0.5s ease;
+    box-shadow: 0 0 0 1px green;
+}
+
+.share {
+    background-color: rgb(225, 225, 252);
+    color: blue;
+}
+
+.share:hover{
+    transition: 0.5s ease;
+    box-shadow: 0 0 0 1px blue;
+}
+
+.public {
+    background-color: rgb(238, 213, 238);
+    color: rgb(128, 25, 128);
+}
+
+.public:hover{
+    transition: 0.5s ease;
+    box-shadow: 0 0 0 1px rgb(85, 26, 85);
 }
 
 .resumeForm{
@@ -33,7 +57,8 @@
     background-color: white;
     border-radius: 0.5rem;
     height: 100%;
-    width: 40%;
+    width: 100%;
+    max-width: 500px;
     padding: 10px;
     box-sizing: border-box;
     border: 1px solid #d1d5db;
@@ -73,8 +98,14 @@
 }
 
 @media (max-width: 768px) {
-    .formSection{
-        width: 100%;
+
+    .formSection {
+        margin: auto;
+    }
+
+    .resumeForm {
+        display: flex;
+        flex-direction: column;
     }
 }
 
