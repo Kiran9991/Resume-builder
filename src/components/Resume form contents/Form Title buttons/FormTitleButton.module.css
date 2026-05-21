@@ -1,0 +1,23 @@
+.formTitleBtn {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+}
+
+.formTitleBtn button:nth-child(3) {
+  margin-left: auto;
+}
+
+.formTitleBtn button:nth-child(3),
+.formTitleBtn button:nth-child(4) {
+  background-color: white;
+  font-weight: bold;
+  box-sizing: border-box;
+  border: 0.5px solid rgb(236, 234, 234);
+}
+
+.formTitleBtn button:nth-child(3):hover,
+.formTitleBtn button:nth-child(4):hover {
+  transition: 0.5s ease;
+  background-color: rgb(235, 232, 232);
+}

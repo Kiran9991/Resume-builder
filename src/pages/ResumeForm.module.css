@@ -1,111 +1,104 @@
-.resumeContainer{
-    background-color: rgb(250, 248, 248);
-    height: 100%;
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
+.resumeContainer {
+  background-color: rgb(250, 248, 248);
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.btnSection{
-    box-sizing: border-box;
-    display: flex;
-    justify-content: flex-end;
-    padding-bottom: 20px;
-    gap: 10px;
-} 
-
-.downloadbtn{
-    background-color: rgb(181, 236, 181);
-    color: green;
+.formTitleBtn {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
 }
 
-.downloadbtn:hover{
-    transition: 0.5s ease;
-    box-shadow: 0 0 0 1px green;
+.formTitleBtn button:nth-child(3) {
+  margin-left: auto;
+}
+
+.formTitleBtn button:nth-child(3),
+.formTitleBtn button:nth-child(4) {
+  background-color: white;
+  font-weight: bold;
+  box-sizing: border-box;
+  border: 0.5px solid rgb(236, 234, 234);
+}
+
+.formTitleBtn button:nth-child(3):hover,
+.formTitleBtn button:nth-child(4):hover {
+  transition: 0.5s ease;
+  background-color: rgb(235, 232, 232);
+}
+
+.btnSection {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 20px;
+  gap: 10px;
+}
+
+.downloadbtn {
+  background-color: rgb(181, 236, 181);
+  color: green;
+}
+
+.downloadbtn:hover {
+  transition: 0.5s ease;
+  box-shadow: 0 0 0 1px green;
 }
 
 .share {
-    background-color: rgb(225, 225, 252);
-    color: blue;
+  background-color: rgb(225, 225, 252);
+  color: blue;
 }
 
-.share:hover{
-    transition: 0.5s ease;
-    box-shadow: 0 0 0 1px blue;
+.share:hover {
+  transition: 0.5s ease;
+  box-shadow: 0 0 0 1px blue;
 }
 
 .public {
-    background-color: rgb(238, 213, 238);
-    color: rgb(128, 25, 128);
+  background-color: rgb(238, 213, 238);
+  color: rgb(128, 25, 128);
 }
 
-.public:hover{
-    transition: 0.5s ease;
-    box-shadow: 0 0 0 1px rgb(85, 26, 85);
+.public:hover {
+  transition: 0.5s ease;
+  box-shadow: 0 0 0 1px rgb(85, 26, 85);
 }
 
-.resumeForm{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    background-color: rgb(250, 248, 248);
-    gap: 30px;
+.resumeFormContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(250, 248, 248);
+  gap: 30px;
 }
 
-.formSection{
-    background-color: white;
-    border-radius: 0.5rem;
-    height: 100%;
-    width: 100%;
-    max-width: 500px;
-    padding: 10px;
-    box-sizing: border-box;
-    border: 1px solid #d1d5db;
-}
-
-.inputGroup {
-    padding: 5px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.inputGroup label {
-    padding: 5px;
-    box-sizing: border-box;
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: #4b5563;
-    font-weight:bold;
-}
-
-.inputGroup input {
-    box-sizing: border-box;
-    border: none;
-    border-radius: 0.5rem;
-    padding: 10px;
-    width: 100%;
-    border: 1px solid #d1d5db;
-    transition: 0.3s ease;
-    outline: none;
-}
-
-.inputGroup input:focus {
-    border-color: #3b82f6;
-    box-shadow: 0 0 0 2px #3b82f6;
+.formSection {
+  background-color: white;
+  border-radius: 0.5rem;
+  height: 100%;
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #d1d5db;
 }
 
 @media (max-width: 768px) {
+  .formSection {
+    margin: auto;
+  }
 
-    .formSection {
-        margin: auto;
-    }
-
-    .resumeForm {
-        display: flex;
-        flex-direction: column;
-    }
+  .resumeFormContainer {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
+.saveBth {
+  padding: 15px 5px;
+}
