@@ -1,47 +1,24 @@
 import React from "react";
 
-import styles from "./PersonalDataForm.module.css";
 import FormTitle from "../Form Title/FormTitle";
+import Inputs from "../Inputs/Inputs";
 
 export default function PersonalDataForm() {
   return (
     <>
-    <FormTitle/>
+      <FormTitle
+        title={"Personal Information"}
+        description={"Get Started with the personal information"}
+      />
+
       <form>
-        <div className={styles.inputGroup}>
-          <label>Full name</label>
-          <input type="text" placeholder="Enter your Full name" />
-        </div>
-
-        <div className={styles.inputGroup}>
-          <label>Email Address</label>
-          <input type="email" placeholder="Enter your email address" />
-        </div>
-
-        <div className={styles.inputGroup}>
-          <label>Phone Number</label>
-          <input type="number" placeholder="Enter your phone number" />
-        </div>
-
-        <div className={styles.inputGroup}>
-          <label>Location</label>
-          <input type="text" placeholder="Enter your location" />
-        </div>
-
-        <div className={styles.inputGroup}>
-          <label>Profession</label>
-          <input type="text" placeholder="Enter your profession" />
-        </div>
-
-        <div className={styles.inputGroup}>
-          <label>LinkedIn Profile</label>
-          <input type="text" placeholder="Enter your linkedin profile" />
-        </div>
-
-        <div className={styles.inputGroup}>
-          <label>Personal Website</label>
-          <input type="text" placeholder="Enter your personal websie" />
-        </div>
+        <Inputs text="Full name" type="text" />
+        <Inputs text="Email Address" type="email" />
+        <Inputs text="Phone Number" type="number" />
+        <Inputs text="Location" type="text" />
+        <Inputs text="Profession" type="text" />
+        <Inputs text="LinkedIn Profile" type="text" />
+        <Inputs text="Personal Website" type="text" />
       </form>
     </>
   );

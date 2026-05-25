@@ -6,30 +6,6 @@
   box-sizing: border-box;
 }
 
-.formTitleBtn {
-  display: flex;
-  gap: 10px;
-  padding: 10px;
-}
-
-.formTitleBtn button:nth-child(3) {
-  margin-left: auto;
-}
-
-.formTitleBtn button:nth-child(3),
-.formTitleBtn button:nth-child(4) {
-  background-color: white;
-  font-weight: bold;
-  box-sizing: border-box;
-  border: 0.5px solid rgb(236, 234, 234);
-}
-
-.formTitleBtn button:nth-child(3):hover,
-.formTitleBtn button:nth-child(4):hover {
-  transition: 0.5s ease;
-  background-color: rgb(235, 232, 232);
-}
-
 .btnSection {
   box-sizing: border-box;
   display: flex;
@@ -78,13 +54,13 @@
 }
 
 .formSection {
+  box-sizing: border-box;
   background-color: white;
   border-radius: 0.5rem;
   height: 100%;
   width: 100%;
   max-width: 500px;
-  padding: 10px;
-  box-sizing: border-box;
+  padding: 20px;
   border: 1px solid #d1d5db;
 }
 
@@ -100,5 +76,5 @@
 }
 
 .saveBth {
-  padding: 15px 5px;
+  padding: 15px 0px;
 }

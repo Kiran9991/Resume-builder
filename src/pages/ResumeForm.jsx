@@ -5,6 +5,7 @@ import { PrintPdf } from "../components/Resume Preview/ResumePreview";
 import ResumePreview from "../components/Resume Preview/ResumePreview";
 import PersonalDataForm from "../components/Resume form contents/Personal Data/PersonalDataForm";
 import FormTitleButton from "../components/Resume form contents/Form Title buttons/FormTitleButton";
+import ProffessionalSummary from "../components/Resume form contents/Professional Summary/ProffessionalSummary";
 
 export default function ResumeForm() {
   return (
@@ -20,7 +21,8 @@ export default function ResumeForm() {
       <div className={styles.resumeFormContainer}>
         <div className={styles.formSection}>
           <FormTitleButton/>
-          <PersonalDataForm />
+          {/* <PersonalDataForm /> */}
+          <ProffessionalSummary/>
 
           <div className={styles.saveBth}>
             <button className={styles.downloadbtn}>Save Changes</button>
