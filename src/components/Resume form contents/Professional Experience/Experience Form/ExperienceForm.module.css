@@ -1,0 +1,58 @@
+.formContainer{
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.expFormContainer{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.inputContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.formCheckBox{
+    display: flex;
+    box-sizing: border-box;
+    padding: 10px 0;
+    gap: 10px;
+}
+
+.formCheckBox input{
+    width: 15px;
+    border: none;
+}
+
+.formCheckBox input:focus{
+    border: none;
+    box-shadow: none;
+}
+
+.jobdescription{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    align-items: center;
+}
+
+.descriptionArea{
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    resize: none;
+    border-radius: 0.5rem;
+    border: 1px solid #d1d5db;
+    outline: none;
+    transition: 0.3sec ease;
+}
+
+.descriptionArea:focus{
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px #3b82f6;
+}

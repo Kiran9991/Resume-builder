@@ -3,6 +3,9 @@
   font-size: small;
 }
 
-.formTitle {
-  padding: 10px 0;
+.titleContainer{
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
 }
+
