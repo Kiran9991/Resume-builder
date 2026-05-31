@@ -1,0 +1,12 @@
+.experienceFormContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.noFormContent{
+    padding: 50px;
+    box-sizing: border-box;
+    text-align: center;
+    color: gray;
+}

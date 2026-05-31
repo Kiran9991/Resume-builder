@@ -2,12 +2,12 @@ import React from 'react';
 
 import styles from './ExperienceForm.module.css';
 
-export default function ExperienceForm() {
+export default function ExperienceForm({ id, deleteId }) {
   return (
     <form className={styles.formContainer}>
       <div className={styles.expFormContainer}>
-        <h4>Experience #1</h4>
-        <button>Delete</button>
+        <h4>Experience #{id}</h4>
+        <button type='button' onClick={() => deleteId(id)}>Delete</button>
       </div>
       <div className={styles.inputContainer}>
         <input type='text' placeholder='Company Name'/>
