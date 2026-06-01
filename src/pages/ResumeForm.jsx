@@ -7,6 +7,7 @@ import PersonalDataForm from "../components/Resume form contents/Personal Data/P
 import FormTitleButton from "../components/Resume form contents/Form Title buttons/FormTitleButton";
 import ProfessionalSummary from "../components/Resume form contents/Professional Summary/ProfessionalSummary";
 import ProfessionalExp from "../components/Resume form contents/Professional Experience/ProfessionalExp";
+import Education from "../components/Resume form contents/Education/Education";
 
 export default function ResumeForm() {
   return (
@@ -24,7 +25,8 @@ export default function ResumeForm() {
           <FormTitleButton/>
           {/* <PersonalDataForm /> */}
           {/* <ProfessionalSummary/> */}
-          <ProfessionalExp/>
+          {/* <ProfessionalExp/> */}
+          <Education/>
 
           <div className={styles.saveBth}>
             <button className={styles.downloadbtn}>Save Changes</button>

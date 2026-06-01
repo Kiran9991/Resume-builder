@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import FormTitle from "../Form Title/FormTitle";
 import ExperienceForm from "./Experience Form/ExperienceForm";
 import styles from "./ProfessionalExp.module.css";
+import EmptyItems from "../Empty Items/EmptyItems";
 
 export default function ProfessionalExp() {
   const [experienceForms, setExperienceForms] = useState([]);
@@ -19,20 +20,15 @@ export default function ProfessionalExp() {
     setExperienceForms([...experienceForms.filter((ele) => ele.id != id)]);
   }
 
-  console.log(typeof experienceForms[0], experienceForms)
-
   let content = experienceForms.map((ele, idx) => (
-    <ExperienceForm key={idx} id={idx+1} 
+    <ExperienceForm key={idx} id={ele.id} 
     deleteId={deleteExperienceFormHandler}/>
   ));
 
   if (experienceForms.length == 0) {
-    content = (
-      <div className={styles.noFormContent}>
-        <p>No work experience added yet.</p>
-        <p>Click "Add Experience" to get started.</p>
-      </div>
-    );
+    content = (<EmptyItems text1={'work experience'}
+    text2={'Add Experience'}
+    />)
   }
 
   return (
