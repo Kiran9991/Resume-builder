@@ -4,25 +4,26 @@ import FormTitle from "../Form Title/FormTitle";
 import ExperienceForm from "./Experience Form/ExperienceForm";
 import styles from "./ProfessionalExp.module.css";
 import EmptyItems from "../Empty Items/EmptyItems";
+import { addform, deleteForm } from "../../../utils/addForm";
 
 export default function ProfessionalExp() {
   const [experienceForms, setExperienceForms] = useState([]);
 
-  const addExperienceFormHandler = () => {
-    setExperienceForms(prev => {
-      const newId = experienceForms.length > 0 ? experienceForms[experienceForms.length-1].id + 1 : 1;
-      return [...prev, { id: newId }]
-    })
-  };
+  // addform
+  // const addExperienceFormHandler = () => {
+  //   setExperienceForms(prev => {
+  //     const newId = experienceForms.length > 0 ? experienceForms[experienceForms.length-1].id + 1 : 1;
+  //     return [...prev, { id: newId }]
+  //   })
+  // };
 
-  const deleteExperienceFormHandler = (id) => {
-    console.log(id)
-    setExperienceForms([...experienceForms.filter((ele) => ele.id != id)]);
-  }
+  // const deleteExperienceFormHandler = (id) => {
+  //   setExperienceForms([...experienceForms.filter((ele) => ele.id != id)]);
+  // }
 
   let content = experienceForms.map((ele, idx) => (
     <ExperienceForm key={idx} id={ele.id} 
-    deleteId={deleteExperienceFormHandler}/>
+    deleteId={deleteForm(experienceForms, setExperienceForms)}/>
   ));
 
   if (experienceForms.length == 0) {
@@ -37,7 +38,7 @@ export default function ProfessionalExp() {
         title={"Professional Experience"}
         description={"Add your job experience"}
         text={"add Experience"}
-        fun={addExperienceFormHandler}
+        fun={addform(experienceForms, setExperienceForms)}
       />
       <div className={styles.experienceFormContainer}>
         {content}

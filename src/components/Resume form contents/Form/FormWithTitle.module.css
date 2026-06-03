@@ -1,0 +1,12 @@
+.container {
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.titleContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}

@@ -25,8 +25,8 @@ export default function ResumeForm() {
           <FormTitleButton/>
           {/* <PersonalDataForm /> */}
           {/* <ProfessionalSummary/> */}
-          {/* <ProfessionalExp/> */}
-          <Education/>
+          <ProfessionalExp/>
+          {/* <Education/> */}
 
           <div className={styles.saveBth}>
             <button className={styles.downloadbtn}>Save Changes</button>
