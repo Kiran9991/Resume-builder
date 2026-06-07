@@ -1,7 +1,7 @@
 export function addform(formArray, setForm) {
   setForm((prev) => {
     const newId =
-      formArray.length > 0 ? formArray[formArray.length - 1] + 1 : 1;
+      formArray.length > 0 ? formArray[formArray.length - 1].id + 1 : 1;
     return [...prev, { id: newId }];
   });
 }

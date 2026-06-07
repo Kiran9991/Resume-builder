@@ -3,9 +3,9 @@ import React from "react";
 import styles from './EducationForm.module.css';
 import FormWithTitle from "../../Form/FormWithTitle";
 
-export default function EducationForm() {
+export default function EducationForm({ id, deleteId }) {
   return (
-    <FormWithTitle title={'Education'} id={'1'}>
+    <FormWithTitle title={'Education'} id={id} fun={deleteId}>
         <div className={styles.inputContainer}>
             <input type="text" placeholder="Institution Name" />
             <input type="text" placeholder="Degree(e.g., Bachelor's, Master)" />
