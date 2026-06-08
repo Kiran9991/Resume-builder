@@ -1,0 +1,26 @@
+.inputContainer{
+    display: flex;
+    gap: 10px;
+}
+
+.inputContainer button{
+    background-color: rgb(62, 62, 245);
+    color: white;
+    width: 20%;
+}
+
+.inputContainer button:hover{
+    background-color: blue;
+}
+
+.tipContainer{
+    background-color: rgb(228, 228, 238);
+    color: blue;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.tipContainer span{
+    padding: 0;
+    font-weight: bold;
+}

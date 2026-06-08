@@ -9,6 +9,7 @@ import ProfessionalSummary from "../components/Resume form contents/Professional
 import ProfessionalExp from "../components/Resume form contents/Professional Experience/ProfessionalExp";
 import Education from "../components/Resume form contents/Education/Education";
 import Project from "../components/Resume form contents/Projects/Project";
+import Skills from "../components/Resume form contents/Skills/Skills";
 
 export default function ResumeForm() {
   return (
@@ -28,8 +29,8 @@ export default function ResumeForm() {
           {/* <ProfessionalSummary/> */}
           {/* <ProfessionalExp/> */}
           {/* <Education/> */}
-          <Project/>
-
+          {/* <Project/> */}
+          <Skills/>
           <div className={styles.saveBth}>
             <button className={styles.downloadbtn}>Save Changes</button>
           </div>

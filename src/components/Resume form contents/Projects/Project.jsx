@@ -18,6 +18,7 @@ export default function Project() {
   if (projectForms.length == 0) {
     content = <EmptyItems text1={"project"} text2={"Add Projects"} />;
   }
+  
   return (
     <FormTitle
       title={"Projects"}

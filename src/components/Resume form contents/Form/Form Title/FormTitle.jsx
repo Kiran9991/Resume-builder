@@ -10,7 +10,7 @@ export default function FormTitle({ title, description, text, fun, children }) {
           <h3>{title}</h3>
           <p className={styles.brief}>{description}</p>
         </div>
-        <button onClick={fun}>{text}</button>
+        {text && <button onClick={fun}>{text}</button>}
       </div>
       {children}
     </div>
