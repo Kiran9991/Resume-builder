@@ -4,10 +4,11 @@ import { PrintPdf } from "../components/Resume Preview/ResumePreview";
 
 import ResumePreview from "../components/Resume Preview/ResumePreview";
 import PersonalDataForm from "../components/Resume form contents/Personal Data/PersonalDataForm";
-import FormTitleButton from "../components/Resume form contents/Form Title buttons/FormTitleButton";
+import FormTitleButton from "../components/Resume form contents/Form/Form Title buttons/FormTitleButton";
 import ProfessionalSummary from "../components/Resume form contents/Professional Summary/ProfessionalSummary";
 import ProfessionalExp from "../components/Resume form contents/Professional Experience/ProfessionalExp";
 import Education from "../components/Resume form contents/Education/Education";
+import Project from "../components/Resume form contents/Projects/Project";
 
 export default function ResumeForm() {
   return (
@@ -26,7 +27,8 @@ export default function ResumeForm() {
           {/* <PersonalDataForm /> */}
           {/* <ProfessionalSummary/> */}
           {/* <ProfessionalExp/> */}
-          <Education/>
+          {/* <Education/> */}
+          <Project/>
 
           <div className={styles.saveBth}>
             <button className={styles.downloadbtn}>Save Changes</button>

@@ -1,6 +1,6 @@
 import React from "react";
-import Inputs from "../Inputs/Inputs";
-import FormTitle from "../Form Title/FormTitle";
+import Inputs from "../Form/Inputs/Inputs";
+import FormTitle from "../Form/Form Title/FormTitle";
 import styles from './ProfessionalSummary.module.css';
 
 export default function ProfessionalSummary() {

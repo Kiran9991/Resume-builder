@@ -1,7 +1,7 @@
 import React from "react";
 
 import styles from "./FormTitleButton.module.css";
-import styles1 from '../../../pages/ResumeForm.module.css';
+import styles1 from '../../../../pages/ResumeForm.module.css';
 
 export default function FormTitleButton() {
   return (

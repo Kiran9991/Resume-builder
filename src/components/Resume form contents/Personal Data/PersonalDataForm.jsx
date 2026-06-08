@@ -1,7 +1,7 @@
 import React from "react";
 
-import FormTitle from "../Form Title/FormTitle";
-import Inputs from "../Inputs/Inputs";
+import FormTitle from "../Form/Form Title/FormTitle";
+import Inputs from "../Form/Inputs/Inputs";
 
 export default function PersonalDataForm() {
   return (
