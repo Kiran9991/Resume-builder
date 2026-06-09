@@ -24,3 +24,71 @@
     padding: 0;
     font-weight: bold;
 }
+
+.listSkillTag{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+.skillTag{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    background-color: rgb(179, 236, 236);
+    color: rgba(14, 87, 87, 0.87);
+    border-radius: 20px;
+    box-sizing: border-box;
+    max-height: 30px;
+    height: 100%;
+    max-width: 200px;
+    padding: 10px 15px;
+    font-size: small;
+}
+
+.skillTag button {
+    background:rgb(179, 236, 236);
+    color: rgba(14, 87, 87, 0.87);
+    padding: 1px;
+    border-radius: 20px;
+}
+
+.skillTag button:hover{
+    background:rgb(119, 199, 199);
+}
+
+/* cross icon */
+
+.cross{
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.div1,
+.div2{
+    width: 10px;
+    height: 2px;
+    background-color: rgba(14, 87, 87, 0.87);
+    top: 45%;
+    left: 25%;
+    border-radius: 20px;
+}
+
+.div1{
+    position: absolute;    
+    transform: rotate(45deg);
+}
+
+.div2{
+    position: absolute;
+    transform: rotate(-45deg);
+}
