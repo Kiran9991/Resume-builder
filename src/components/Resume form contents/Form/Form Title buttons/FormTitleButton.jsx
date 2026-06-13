@@ -3,13 +3,13 @@ import React from "react";
 import styles from "./FormTitleButton.module.css";
 import styles1 from '../../../../pages/ResumeForm.module.css';
 
-export default function FormTitleButton() {
+export default function FormTitleButton({ prev, next }) {
   return (
     <div className={styles.formTitleBtn}>
       <button className={styles1.share}>Template</button>
       <button className={styles1.public}>Accent</button>
-      <button>Previous</button>
-      <button>Next {`>`}</button>
+      <button onClick={prev}>Previous</button>
+      <button onClick={next}>Next {`>`}</button>
     </div>
   );
 }

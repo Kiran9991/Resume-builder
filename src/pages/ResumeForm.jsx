@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./ResumeForm.module.css";
 import { PrintPdf } from "../components/Resume Preview/ResumePreview";
 
@@ -12,6 +12,31 @@ import Project from "../components/Resume form contents/Projects/Project";
 import Skills from "../components/Resume form contents/Skills/Skills";
 
 export default function ResumeForm() {
+  const ResumeContentArr = [
+    <PersonalDataForm />,
+    <ProfessionalSummary />,
+    <ProfessionalExp />,
+    <Education />,
+    <Project />,
+    <Skills />,
+  ];
+
+  const limitOfResumeContent = ResumeContentArr.length - 1;
+
+  const [count, setCount] = useState(0);
+
+  let content = ResumeContentArr.find((_, idx) => count == idx);
+
+  const percentage = Math.floor((count / limitOfResumeContent) * 100);
+
+  const increamentCount = () => {
+    count < limitOfResumeContent && setCount((prev) => prev + 1);
+  };
+
+  const decrementCount = () => {
+    count > 0 && setCount((prev) => prev - 1);
+  };
+
   return (
     <div className={styles.resumeContainer}>
       <div className={styles.btnSection}>
@@ -24,13 +49,14 @@ export default function ResumeForm() {
 
       <div className={styles.resumeFormContainer}>
         <div className={styles.formSection}>
-          <FormTitleButton/>
-          {/* <PersonalDataForm /> */}
-          {/* <ProfessionalSummary/> */}
-          {/* <ProfessionalExp/> */}
-          {/* <Education/> */}
-          {/* <Project/> */}
-          <Skills/>
+          <div className={styles.indicator}>
+            <div
+              className={styles.i1}
+              style={{ width: `${percentage}%` }}
+            ></div>
+          </div>
+          <FormTitleButton prev={decrementCount} next={increamentCount} />
+          {content}
           <div className={styles.saveBth}>
             <button className={styles.downloadbtn}>Save Changes</button>
           </div>
