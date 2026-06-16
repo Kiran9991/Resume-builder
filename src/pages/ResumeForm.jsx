@@ -49,12 +49,12 @@ export default function ResumeForm() {
 
       <div className={styles.resumeFormContainer}>
         <div className={styles.formSection}>
-          <div className={styles.indicator}>
-            <div
-              className={styles.i1}
-              style={{ width: `${percentage}%` }}
-            ></div>
-          </div>
+
+          <div className={styles.progressBar}>
+            </div>
+            <div className={styles.bar} 
+            style={{ width: `${percentage}%` }} />
+
           <FormTitleButton prev={decrementCount} next={increamentCount} />
           {content}
           <div className={styles.saveBth}>

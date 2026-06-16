@@ -51,10 +51,10 @@
   justify-content: space-between;
   background-color: rgb(250, 248, 248);
   gap: 30px;
-  position: relative;
 }
 
 .formSection {
+  position: relative;
   box-sizing: border-box;
   background-color: white;
   border-radius: 0.5rem;
@@ -62,26 +62,30 @@
   width: 100%;
   max-width: 500px;
   padding: 0px 20px 20px 20px;
-  border: 1px solid #d1d5db;
-  /* overflow: hidden; */
-}
-
-.indicator {
-  height: 5px;
-  width: 100%;
-  background-color: #d1d5db;
-  /* position: absolute; */
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
+  border-top: 0;
+  border-left: 1px solid #d1d5db;
+  border-right: 1px solid #d1d5db;
+  border-bottom: 1px solid #d1d5db;
   overflow: hidden;
 }
 
-.i1 {
-  height: 100%;
-  width: 0%;
+.progressBar {
+  top: 0%;
+  right: 0;
+  left: 0;
+  border: 2px solid #d1d5db;
+  position: absolute;
+}
+
+.bar {
+  top: 0;
+  left: 0;
+  height: 4px;
   background-color: rgb(15, 197, 15);
+  position:absolute;
   transition: 1s ease-in;
 }
+
 
 @media (max-width: 768px) {
   .formSection {
