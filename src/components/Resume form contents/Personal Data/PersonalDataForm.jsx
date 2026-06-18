@@ -1,62 +1,57 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 
 import FormTitle from "../Form/Form Title/FormTitle";
 import Inputs from "../Form/Inputs/Inputs";
+import PersonalInfoContext, { PersonalInfoProvider } from "../../../context/personalInfoStore";
 
 export default function PersonalDataForm() {
-  const [enteredName, setEnteredName] = useState("");
-  const [enteredEmail, setEnteredEmail] = useState("");
-  const [enteredPhoneNumber, setEnteredPhoneNumber] = useState(0);
-  const [enteredLocation, setEnterdLocation] = useState("");
-  const [enteredProfession, setEnteredProfession] = useState('');
-  const [enteredLindedInProfile, setEnterdLindedInProfile] = useState("");
-  const [enteredPersonalWebsite, setEnterdPersonalWebsite] = useState("");
+const { personObj, setPersonObj } = useContext(PersonalInfoContext);
 
-  const obj = { enteredName, enteredEmail, enteredPhoneNumber, enteredLocation, enteredLindedInProfile, enteredPersonalWebsite };
+  console.log(personObj)
   
   return (
     <>
       <FormTitle
         title={"Personal Information"}
         description={"Get Started with the personal information"}
-      />
+        />
 
       <form>
         <Inputs text="Full name" type="text" 
-        fun={(s) => setEnteredName(s)}
-        val={enteredName}
+        fun={(s) => setPersonObj({ ...personObj, name: s })}
+        val={personObj.name}
         />
         <Inputs
           text="Email Address"
           type="email"
-          fun={(s) => setEnteredEmail(s)}
-          val={enteredEmail}
+          fun={(s) => setPersonObj({ ...personObj, email: s })}
+          val={personObj.email}
         />
         <Inputs
           text="Phone Number"
-          type="number"
-          fun={(s) => setEnteredPhoneNumber(s)}
-          val={enteredPhoneNumber}
+          type="text"
+          fun={(s) => setPersonObj({ ...personObj, phNumber: s })}
+          val={personObj.phNumber}
         />
         <Inputs text="Location" type="text" 
-        fun={(s) => setEnterdLocation(s)}
-        val={enteredLocation}
+        fun={(s) => setPersonObj({ ...personObj, address: s })}
+        val={personObj.address}
         />
         <Inputs text="Profession" type="text"
-        fun={(s) => setEnteredProfession(s)}
-        val={enteredProfession}
+        fun={(s) => setPersonObj({ ...personObj, profession: s })}
+        val={personObj.profession}
         />
         <Inputs
           text="LinkedIn Profile"
           type="text"
-          fun={(s) => setEnterdLindedInProfile(s)}
-          val={enteredLindedInProfile}
+          fun={(s) => setPersonObj({ ...personObj, linkedin: s })}
+          val={personObj.linkedin}
         />
         <Inputs
           text="Personal Website"
           type="text"
-          fun={(s) => setEnterdPersonalWebsite(s)}
-          val={enteredPersonalWebsite}
+          fun={(s) => setPersonObj({ ...personObj, website: s })}
+          val={personObj.website}
         />
       </form>
     </>

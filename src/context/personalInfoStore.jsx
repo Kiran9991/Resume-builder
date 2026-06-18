@@ -5,15 +5,17 @@ const PersonalInfoContext = createContext();
 export default PersonalInfoContext;
 
 function PersonalInfoProvider({ children }) {
-  const [personalInfoObj, setPersonalInfoObj] = useState({});
+  const [personalInfoObj, setPersonalInfoObj] = useState({ 
+    name:'Your Name', email:'', phNumber:'', address:'', profession:'', linkedin:'', website:''
+  });
 
   const setPersonalInfoObjHandler = (obj) => {
     setPersonalInfoObj(obj);
   };
 
   const obj = {
-    personalInfo: personalInfoObj,
-    setPersonalInfo: setPersonalInfoObjHandler,
+    personObj: personalInfoObj,
+    setPersonObj: setPersonalInfoObjHandler,
   };
 
   return (

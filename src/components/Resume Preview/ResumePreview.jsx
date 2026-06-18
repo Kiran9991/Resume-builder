@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import styles from "./ResumePreview.module.css";
+import PersonalInfoContext from "../../context/personalInfoStore";
 
 export function PrintPdf() {
   let divContents = document.getElementById("resumeDownload").innerHTML;
@@ -46,16 +47,18 @@ export function PrintPdf() {
 }
 
 export default function ResumePreview() {
+  const { personObj } = useContext(PersonalInfoContext);
+
   return (
     <div className={styles.previewSection} id="resumeDownload">
       <div className={styles.personalData}>
-        <h1>Title</h1>
+        <h1>{personObj.name}</h1>
         <div className={styles.p1}>
-          <span>Email kiranagiwale3@gmail.cm</span>
-          <span>phone no. 87543024980</span>
-          <span>Address At post talegaoon dabhade</span>
-          <span>linkedin url www.kiranagiwale.com</span>
-          <span>personal website www.portfolio.ccom</span>
+          <span>{personObj.email}</span>
+          <span>{personObj.phNumber}</span>
+          <span>{personObj.address}</span>
+          <span>{personObj.linkedin}</span>
+          <span>{personObj.website}</span>
         </div>
       </div>
 
