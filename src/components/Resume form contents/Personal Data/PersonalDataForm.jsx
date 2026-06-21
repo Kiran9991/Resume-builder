@@ -7,7 +7,7 @@ import PersonalInfoContext, { PersonalInfoProvider } from "../../../context/pers
 export default function PersonalDataForm() {
 const { personObj, setPersonObj } = useContext(PersonalInfoContext);
 
-  console.log(personObj)
+console.log(personObj)
   
   return (
     <>
@@ -19,7 +19,7 @@ const { personObj, setPersonObj } = useContext(PersonalInfoContext);
       <form>
         <Inputs text="Full name" type="text" 
         fun={(s) => setPersonObj({ ...personObj, name: s })}
-        val={personObj.name}
+        val={personObj && personObj.name == 'Your Name' ? '' : personObj.name}
         />
         <Inputs
           text="Email Address"

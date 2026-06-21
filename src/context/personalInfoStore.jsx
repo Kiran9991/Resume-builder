@@ -1,13 +1,20 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 
 const PersonalInfoContext = createContext();
 
 export default PersonalInfoContext;
 
 function PersonalInfoProvider({ children }) {
-  const [personalInfoObj, setPersonalInfoObj] = useState({ 
-    name:'Your Name', email:'', phNumber:'', address:'', profession:'', linkedin:'', website:''
-  });
+  const LsObj = {
+    name: "Your Name",
+    ...JSON.parse(localStorage.getItem("userObj")),
+  };
+
+  const [personalInfoObj, setPersonalInfoObj] = useState(LsObj);
+
+  useEffect(() => {
+    localStorage.setItem("userObj", JSON.stringify(personalInfoObj));
+  }, [personalInfoObj]);
 
   const setPersonalInfoObjHandler = (obj) => {
     setPersonalInfoObj(obj);
