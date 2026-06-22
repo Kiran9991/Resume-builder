@@ -40,6 +40,7 @@
 .jobTitle{
     padding-left: 20px;
     border-left: 3px solid grey;
+    margin-bottom: 20px;
 } h3 {
     padding-bottom: 5px;
 }
@@ -47,7 +48,7 @@
 .jobRoleTitle {
     display: flex;
     justify-content: space-between;
-    padding: 10px 0;
+    padding-bottom: 10px;
 }
 
 .duration {

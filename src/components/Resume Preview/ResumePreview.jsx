@@ -66,10 +66,12 @@ export default function ResumePreview() {
         </div>
       </div>
 
-      {professionalSummary && <section className={styles.s1}>
-        <h2>Profession Summary</h2>
-        <p>{professionalSummary}</p>
-      </section>}
+      {professionalSummary && (
+        <section className={styles.s1}>
+          <h2>Profession Summary</h2>
+          <p>{professionalSummary}</p>
+        </section>
+      )}
 
       {expDetails.length > 0 && (
         <section className={styles.s2}>
@@ -78,11 +80,12 @@ export default function ResumePreview() {
             <div key={item.id} className={styles.jobTitle}>
               <div className={styles.jobRoleTitle}>
                 <div className={styles.jobTitleName}>
-                  <h3>{item.companyName}</h3>
                   <h3>{item.jobTitle}</h3>
+                  <h3>{item.companyName}</h3>
                 </div>
                 <div className={styles.duration}>
-                  {item.joiningDate} - {item.endDate}
+                  {customDate(item.joiningDate)} -{" "}
+                  {item.currentlyWorking ? "Present" : customDate(item.endDate)}
                 </div>
               </div>
 
@@ -122,4 +125,12 @@ export default function ResumePreview() {
       </section>
     </div>
   );
+}
+
+function customDate(newDate) {
+  const date = new Date(newDate);
+
+  const result = `${date.toLocaleString("en-US", { month: "short" })} ${date.getFullYear()}`;
+
+  return result;
 }

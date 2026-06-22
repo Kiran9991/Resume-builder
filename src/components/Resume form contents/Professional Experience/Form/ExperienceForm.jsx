@@ -23,14 +23,15 @@ export default function ExperienceForm({ item }) {
           value={item.jobTitle}
         />
         <input
-          type="date"
+          type="month"
           onChange={(e) => updateForm(item.id, { joiningDate: e.target.value })}
           value={item.joiningDate}
         />
         <input
-          type="date"
+          type="month"
           onChange={(e) => updateForm(item.id, { endDate: e.target.value })}
           value={item.endDate}
+          disabled={item.currentlyWorking}
         />
       </div>
       <div className={styles.formCheckBox}>
