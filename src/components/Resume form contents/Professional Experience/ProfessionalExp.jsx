@@ -6,15 +6,15 @@ import EmptyItems from "../Empty Items/EmptyItems";
 import ProfessionalExpContext from "../../../context/professionalExpStore";
 
 export default function ProfessionalExp() {
-  const { forms, addForm, deleteExpDetails, expDetails, setExpDetail } = useContext(ProfessionalExpContext);
+  const { expDetails, addForm } = useContext(ProfessionalExpContext);
 
   console.log(expDetails)
 
-  let content = expDetails.map((ele, idx) => (
-    <ExperienceForm key={idx} id={ele.id} deleteId={() => deleteExpDetails(ele.id)} />
+  let content = expDetails.map((item) => (
+    <ExperienceForm key={item.id} item={item}/>
   ));
 
-  if (forms.length == 0) {
+  if (expDetails.length == 0) {
     content = <EmptyItems text1={"work experience"} text2={"Add Experience"} />;
   }
 
@@ -24,7 +24,7 @@ export default function ProfessionalExp() {
         title={"Professional Experience"}
         description={"Add your job experience"}
         text={"add Experience"}
-        fun={setExpDetail}
+        fun={addForm}
       >
         {content}
       </FormTitle>

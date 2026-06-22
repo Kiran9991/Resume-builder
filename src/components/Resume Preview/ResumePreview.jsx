@@ -51,7 +51,7 @@ export function PrintPdf() {
 export default function ResumePreview() {
   const { personObj } = useContext(PersonalInfoContext);
   const { professionalSummary } = useContext(ProfessionalSummaryContext);
-  const { expDetails, forms } = useContext(ProfessionalExpContext);
+  const { expDetails } = useContext(ProfessionalExpContext);
 
   return (
     <div className={styles.previewSection} id="resumeDownload">
@@ -66,48 +66,31 @@ export default function ResumePreview() {
         </div>
       </div>
 
-      <section className={styles.s1}>
+      {professionalSummary && <section className={styles.s1}>
         <h2>Profession Summary</h2>
         <p>{professionalSummary}</p>
-      </section>
+      </section>}
 
-      {forms.map((ele, id) => (
-        <section className={styles.s2} key={id}>
-          <>
-            <h2>PROFESSIONAL EXPERIENCE</h2>
-            <div className={styles.jobTitle}>
+      {expDetails.length > 0 && (
+        <section className={styles.s2}>
+          <h2>PROFESSIONAL EXPERIENCE</h2>
+          {expDetails.map((item) => (
+            <div key={item.id} className={styles.jobTitle}>
               <div className={styles.jobRoleTitle}>
                 <div className={styles.jobTitleName}>
-                  <h3>{ele.companyName}</h3>
-                  <h3>{ele.jobTitle}</h3>
+                  <h3>{item.companyName}</h3>
+                  <h3>{item.jobTitle}</h3>
                 </div>
                 <div className={styles.duration}>
-                  {ele.joiningDate} - {ele.endDate}
+                  {item.joiningDate} - {item.endDate}
                 </div>
               </div>
 
-              <p>{ele.expDescription}</p>
+              <p>{item.jobDescription}</p>
             </div>
-          </>
+          ))}
         </section>
-      ))}
-      {/* <h2>PROFESSIONAL EXPERIENCE</h2>
-        <div className={styles.jobTitle}>
-          <div className={styles.jobRoleTitle}>
-            <div className={styles.jobTitleName}>
-              <h3>Graduate Apprentice Traine</h3>
-              <h3>KSPG</h3>
-            </div>
-            <div className={styles.duration}>Jan 2026 - Present</div>
-          </div>
-
-          <p>
-            Experienced in building projects such as e-commerce platforms,
-            real-time chat applications, and expense tracking systems. Strong
-            problem-solving abilities combined with an engineering background
-            and practical
-          </p>
-        </div> */}
+      )}
 
       <section className={styles.s3}>
         <h2>PROJECTS</h2>
@@ -115,9 +98,7 @@ export default function ResumePreview() {
           <div className={styles.jobRoleTitle}>
             <div className={styles.jobTitleName}>
               <h3>Group chat app</h3>
-              {/* <h3>KSPG</h3> */}
             </div>
-            {/* <div className={styles.duration}>Jan 2026 - Present</div> */}
           </div>
           <p>
             Experienced in building projects such as e-commerce platforms,

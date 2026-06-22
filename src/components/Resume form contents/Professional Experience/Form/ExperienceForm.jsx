@@ -1,54 +1,44 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 
 import styles from "./ExperienceForm.module.css";
 import FormWithTitle from "../../Form/FormWithTitle";
 import ProfessionalExpContext from "../../../../context/professionalExpStore";
 
-export default function ExperienceForm({ id, deleteId }) {
-  const { expDetails, setExpDetails } = useContext(ProfessionalExpContext);
-
-  const [obj, setObj] = useState({
-    id,
-    companyName:'', jobTitle:'', joiningDate:'', endDate:'', currentlyWorking:false,
-    expDescription:''
-  })
-
-  // console.log(expDetail)
-
-  const expDetailObj = obj;
+export default function ExperienceForm({ item }) {
+  const { updateForm, deleteForm } = useContext(ProfessionalExpContext);
 
   return (
-    <FormWithTitle title={"Experience"} id={id} fun={deleteId}>
+    <FormWithTitle title={"Experience"} id={item.id} fun={() => deleteForm(item.id)}>
       <div className={styles.inputContainer}>
         <input
           type="text"
           placeholder="Company Name"
-          onChange={(e) => setExpDetails([...expDetails, { id, companyName: e.target.value}])}
-          value={expDetails.companyName}
+          onChange={(e) => updateForm(item.id, { companyName: e.target.value } )}
+          value={item.companyName}
         />
         <input
           type="text"
           placeholder="Job Title"
-          onChange={(e) => setExpDetails({ ...expDetailObj, jobTitle: e.target.value })}
-          value={expDetailObj.jobTitle}
+          onChange={(e) => updateForm(item.id, { jobTitle: e.target.value })}
+          value={item.jobTitle}
         />
         <input
           type="date"
-          onChange={(e) => setExpDetails({ ...expDetailObj, joiningDate: e.target.value })}
-          value={expDetailObj.joiningDate}
+          onChange={(e) => updateForm(item.id, { joiningDate: e.target.value })}
+          value={item.joiningDate}
         />
         <input
           type="date"
-          onChange={(e) => setExpDetails({ ...expDetailObj, endDate: e.target.value })}
-          value={expDetailObj.endDate}
+          onChange={(e) => updateForm(item.id, { endDate: e.target.value })}
+          value={item.endDate}
         />
       </div>
       <div className={styles.formCheckBox}>
         <input
           type="checkbox"
-          checked={expDetailObj.currentlyWorking}
+          checked={item.currentlyWorking}
           onChange={(e) =>
-            setExpDetails({ ...expDetailObj, currentlyWorking: e.target.checked })
+            updateForm(item.id, { currentlyWorking: e.target.checked })
           }
         />
         <label>Currently working here</label>
@@ -62,8 +52,8 @@ export default function ExperienceForm({ id, deleteId }) {
         placeholder="Describe your key responsibilities and achievements..."
         rows={5}
         cols={60}
-        onChange={(e) => setExpDetails({ ...expDetailObj, expDescription: e.target.value })}
-        value={expDetailObj.expDescription}
+        onChange={(e) => updateForm(item.id, { jobDescription: e.target.value })}
+        value={item.jobDescription}
       />
     </FormWithTitle>
   );
