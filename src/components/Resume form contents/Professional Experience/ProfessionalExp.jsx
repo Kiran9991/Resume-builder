@@ -1,23 +1,21 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 
 import FormTitle from "../Form/Form Title/FormTitle";
 import ExperienceForm from "./Form/ExperienceForm";
-// import styles from "./ProfessionalExp.module.css";
 import EmptyItems from "../Empty Items/EmptyItems";
-import { addform, deleteForm } from "../../../utils/addForm";
+import ProfessionalExpContext from "../../../context/professionalExpStore";
 
 export default function ProfessionalExp() {
-  const [experienceForms, setExperienceForms] = useState([]);
+  const { forms, addForm, deleteExpDetails, expDetails, setExpDetail } = useContext(ProfessionalExpContext);
 
-  let content = experienceForms.map((ele, idx) => (
-    <ExperienceForm key={idx} id={ele.id} 
-    deleteId={() => deleteForm(experienceForms, setExperienceForms, ele.id)}/>
+  console.log(expDetails)
+
+  let content = expDetails.map((ele, idx) => (
+    <ExperienceForm key={idx} id={ele.id} deleteId={() => deleteExpDetails(ele.id)} />
   ));
 
-  if (experienceForms.length == 0) {
-    content = (<EmptyItems text1={'work experience'}
-    text2={'Add Experience'}
-    />)
+  if (forms.length == 0) {
+    content = <EmptyItems text1={"work experience"} text2={"Add Experience"} />;
   }
 
   return (
@@ -26,7 +24,7 @@ export default function ProfessionalExp() {
         title={"Professional Experience"}
         description={"Add your job experience"}
         text={"add Experience"}
-        fun={() => addform(experienceForms, setExperienceForms)}
+        fun={setExpDetail}
       >
         {content}
       </FormTitle>

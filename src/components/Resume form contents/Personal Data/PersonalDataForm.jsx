@@ -7,7 +7,7 @@ import PersonalInfoContext, { PersonalInfoProvider } from "../../../context/pers
 export default function PersonalDataForm() {
 const { personObj, setPersonObj } = useContext(PersonalInfoContext);
 
-console.log(personObj)
+// console.log(personObj)
   
   return (
     <>

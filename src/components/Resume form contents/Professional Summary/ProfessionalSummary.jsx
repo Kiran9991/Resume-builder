@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import Inputs from "../Form/Inputs/Inputs";
 import FormTitle from "../Form/Form Title/FormTitle";
 import styles from "./ProfessionalSummary.module.css";
+import ProfessionalSummaryContext from "../../../context/professionalSummaryStore";
 
 export default function ProfessionalSummary() {
+  const { professionalSummary, setProfessionalSummary } = useContext(ProfessionalSummaryContext);
+
   return (
     <FormTitle
       title={"Professional Summary"}
@@ -15,6 +18,8 @@ export default function ProfessionalSummary() {
         cols={70}
         placeholder="Write a compelling professional summary that highlights your key strengths and career objectives..."
         className={styles.textArea}
+        onChange={(e) => setProfessionalSummary(e.target.value)}
+        value={professionalSummary}
       />
     </FormTitle>
   );

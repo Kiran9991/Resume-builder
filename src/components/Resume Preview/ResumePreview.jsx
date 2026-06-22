@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 
 import styles from "./ResumePreview.module.css";
 import PersonalInfoContext from "../../context/personalInfoStore";
+import ProfessionalSummaryContext from "../../context/professionalSummaryStore";
+import ProfessionalExpContext from "../../context/professionalExpStore";
 
 export function PrintPdf() {
   let divContents = document.getElementById("resumeDownload").innerHTML;
@@ -23,7 +25,7 @@ export function PrintPdf() {
       }
     })
     .join("");
-    console.log(styles)
+  console.log(styles);
   printWindow.document.open();
   printWindow.document.write(`
                 <html>
@@ -48,6 +50,8 @@ export function PrintPdf() {
 
 export default function ResumePreview() {
   const { personObj } = useContext(PersonalInfoContext);
+  const { professionalSummary } = useContext(ProfessionalSummaryContext);
+  const { expDetails, forms } = useContext(ProfessionalExpContext);
 
   return (
     <div className={styles.previewSection} id="resumeDownload">
@@ -64,18 +68,30 @@ export default function ResumePreview() {
 
       <section className={styles.s1}>
         <h2>Profession Summary</h2>
-        <p>
-          Results-driven MERN Stack Developer with hands-on experience building
-          full-stack web applications using MongoDB, Express.js, React.js, and
-          Node.js. Skilled in developing scalable REST APIs, responsive user
-          interfaces, and database-driven applications with strong understanding
-          of JavaScript, asynchronous programming, and modern web development
-          practices.
-        </p>
+        <p>{professionalSummary}</p>
       </section>
 
-      <section className={styles.s2}>
-        <h2>PROFESSIONAL EXPERIENCE</h2>
+      {forms.map((ele, id) => (
+        <section className={styles.s2} key={id}>
+          <>
+            <h2>PROFESSIONAL EXPERIENCE</h2>
+            <div className={styles.jobTitle}>
+              <div className={styles.jobRoleTitle}>
+                <div className={styles.jobTitleName}>
+                  <h3>{ele.companyName}</h3>
+                  <h3>{ele.jobTitle}</h3>
+                </div>
+                <div className={styles.duration}>
+                  {ele.joiningDate} - {ele.endDate}
+                </div>
+              </div>
+
+              <p>{ele.expDescription}</p>
+            </div>
+          </>
+        </section>
+      ))}
+      {/* <h2>PROFESSIONAL EXPERIENCE</h2>
         <div className={styles.jobTitle}>
           <div className={styles.jobRoleTitle}>
             <div className={styles.jobTitleName}>
@@ -91,8 +107,7 @@ export default function ResumePreview() {
             problem-solving abilities combined with an engineering background
             and practical
           </p>
-        </div>
-      </section>
+        </div> */}
 
       <section className={styles.s3}>
         <h2>PROJECTS</h2>
