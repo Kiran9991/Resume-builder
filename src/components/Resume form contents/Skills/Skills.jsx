@@ -1,30 +1,27 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import FormTitle from "../Form/Form Title/FormTitle";
 import styles from "./Skills.module.css";
 import EmptyItems from "../Empty Items/EmptyItems";
+import SkillsContext from "../../../context/skillStore";
 
 export default function Skills() {
+  const { skills, addSkill, deleteSkill } = useContext(SkillsContext);
   const [enteredSkill, setEnteredSkill] = useState("");
-  const [skills, setSkills] = useState([]);
 
   const submitFormHandler = (e) => {
     e.preventDefault();
     if (!enteredSkill) return;
-    setSkills((prev) => [...prev, enteredSkill]);
+    addSkill(enteredSkill);
     setEnteredSkill("");
-  };
-
-  const deleteHandler = (id) => {
-    setSkills((prev) => [...prev.filter((ele, idx) => idx != id)]);
   };
 
   let content = (
     <div className={styles.listSkillTag}>
       {skills &&
-        skills.map((ele, idx) => (
+        skills.map((item, idx) => (
           <div key={idx} className={styles.skillTag}>
-            <div>{ele}</div>
-            <button onClick={() => deleteHandler(idx)}>
+            <div>{item}</div>
+            <button onClick={() => deleteSkill(item)}>
               <div className={styles.cross}>
                 <div className={styles.div1}></div>
                 <div className={styles.div2}></div>

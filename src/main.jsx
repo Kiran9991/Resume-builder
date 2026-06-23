@@ -9,6 +9,7 @@ import { ProfessionalSummaryProvider } from "./context/professionalSummaryStore.
 import { ProfessionalExpProvider } from "./context/professionalExpStore.jsx";
 import { EducationProvider } from "./context/educationStore.jsx";
 import { ProjectProvider } from "./context/projectStore.jsx";
+import { SkillProvider } from "./context/skillStore.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -17,7 +18,9 @@ createRoot(document.getElementById("root")).render(
         <ProfessionalExpProvider>
           <ProjectProvider>
             <EducationProvider>
-              <App />
+              <SkillProvider>
+                <App />
+              </SkillProvider>
             </EducationProvider>
           </ProjectProvider>
         </ProfessionalExpProvider>

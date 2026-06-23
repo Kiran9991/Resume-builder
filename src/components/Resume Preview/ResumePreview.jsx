@@ -6,6 +6,7 @@ import ProfessionalSummaryContext from "../../context/professionalSummaryStore";
 import ProfessionalExpContext from "../../context/professionalExpStore";
 import EducationContext from "../../context/educationStore";
 import ProjectContext from "../../context/projectStore";
+import SkillsContext from "../../context/skillStore";
 
 export function PrintPdf() {
   let divContents = document.getElementById("resumeDownload").innerHTML;
@@ -56,6 +57,7 @@ export default function ResumePreview() {
   const { expDetails } = useContext(ProfessionalExpContext);
   const { projectDetails } = useContext(ProjectContext);
   const { educationDetails } = useContext(EducationContext);
+  const { skills } = useContext(SkillsContext);
 
   return (
     <div className={styles.previewSection} id="resumeDownload">
@@ -137,6 +139,15 @@ export default function ResumePreview() {
             </div>
           ))}
         </section>
+      )}
+
+      {/* Skills */}
+      {skills.length > 0 && (
+        <ul>
+          {skills.map((item, id) => (
+            <li key={id}>{item}</li>
+          ))}
+        </ul>
       )}
     </div>
   );
