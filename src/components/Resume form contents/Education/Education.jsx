@@ -1,35 +1,28 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import FormTitle from "../Form/Form Title/FormTitle";
 import EmptyItems from "../Empty Items/EmptyItems";
 import EducationForm from "./Form/EducationForm";
-import { addform, deleteForm } from "../../../utils/addForm";
-// import styles from "./Education.module.css";
+import EducationContext from "../../../context/educationStore";
 
 export default function Education() {
-  const [educationForms, setEducationForms] = useState([]);
+  const { educationDetails, addEducationForm } = useContext(EducationContext);
 
-  let content = educationForms.map((ele, idx) => (
-    <EducationForm
-      key={idx}
-      id={ele.id}
-      deleteId={() => deleteForm(educationForms, setEducationForms, ele.id)}
-    />
+  let content = educationDetails.map((item) => (
+    <EducationForm key={item.id} item={item} />
   ));
 
-  if (educationForms.length == 0) {
+  if (educationDetails.length == 0) {
     content = <EmptyItems text1={"education"} text2={"Add Education"} />;
   }
 
   return (
-    <>
-      <FormTitle
-        title={"Education"}
-        description={"Add your education details"}
-        text={"Add Education"}
-        fun={() => addform(educationForms, setEducationForms)}
-      >
-        {content}
-      </FormTitle>
-    </>
+    <FormTitle
+      title={"Education"}
+      description={"Add your education details"}
+      text={"Add Education"}
+      fun={addEducationForm}
+    >
+      {content}
+    </FormTitle>
   );
 }

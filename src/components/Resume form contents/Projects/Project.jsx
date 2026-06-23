@@ -1,21 +1,20 @@
-import React, { useState } from "react";
-import { addform, deleteForm } from "../../../utils/addForm";
+import React, { useContext } from "react";
 import EmptyItems from "../Empty Items/EmptyItems";
 import FormTitle from "../Form/Form Title/FormTitle";
 import ProjectForm from "./Form/ProjectForm";
+import ProjectContext from "../../../context/projectStore";
 
 export default function Project() {
-  const [projectForms, setProjectForms] = useState([]);
+  const { projectDetails, addProjectForm,  } = useContext(ProjectContext);
 
-  let content = projectForms.map((ele, idx) => (
+  let content = projectDetails.map((item) => (
     <ProjectForm
-      key={idx}
-      id={ele.id}
-      deleteId={() => deleteForm(projectForms, setProjectForms, ele.id)}
+      key={item.id}
+      item={item}
     />
   ));
 
-  if (projectForms.length == 0) {
+  if (projectDetails.length == 0) {
     content = <EmptyItems text1={"project"} text2={"Add Projects"} />;
   }
   
@@ -24,7 +23,7 @@ export default function Project() {
       title={"Projects"}
       description={"Add your project details"}
       text={"Add Projects"}
-      fun={() => addform(projectForms, setProjectForms)}
+      fun={addProjectForm}
     >
       {content}
     </FormTitle>

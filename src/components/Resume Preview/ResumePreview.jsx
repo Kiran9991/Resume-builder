@@ -4,6 +4,8 @@ import styles from "./ResumePreview.module.css";
 import PersonalInfoContext from "../../context/personalInfoStore";
 import ProfessionalSummaryContext from "../../context/professionalSummaryStore";
 import ProfessionalExpContext from "../../context/professionalExpStore";
+import EducationContext from "../../context/educationStore";
+import ProjectContext from "../../context/projectStore";
 
 export function PrintPdf() {
   let divContents = document.getElementById("resumeDownload").innerHTML;
@@ -52,6 +54,8 @@ export default function ResumePreview() {
   const { personObj } = useContext(PersonalInfoContext);
   const { professionalSummary } = useContext(ProfessionalSummaryContext);
   const { expDetails } = useContext(ProfessionalExpContext);
+  const { projectDetails } = useContext(ProjectContext);
+  const { educationDetails } = useContext(EducationContext);
 
   return (
     <div className={styles.previewSection} id="resumeDownload">
@@ -95,34 +99,45 @@ export default function ResumePreview() {
         </section>
       )}
 
-      <section className={styles.s3}>
-        <h2>PROJECTS</h2>
-        <div className={styles.jobTitle}>
-          <div className={styles.jobRoleTitle}>
-            <div className={styles.jobTitleName}>
-              <h3>Group chat app</h3>
+      {/* Projects */}
+      {projectDetails.length > 0 && (
+        <section className={styles.s3}>
+          <h2>PROJECTS</h2>
+          {projectDetails.map((item) => (
+            <div className={styles.jobTitle} key={item.id}>
+              <div className={styles.jobRoleTitle}>
+                <div className={styles.jobTitleName}>
+                  <h3>{item.name}</h3>
+                  <h3>{item.type}</h3>
+                </div>
+              </div>
+              <p>{item.description}</p>
             </div>
-          </div>
-          <p>
-            Experienced in building projects such as e-commerce platforms,
-            real-time chat applications, and expense tracking systems. Strong
-            problem-solving abilities combined with an engineering background
-            and practical
-          </p>
-        </div>
-      </section>
+          ))}
+        </section>
+      )}
 
-      <section className={styles.s4}>
-        <h2>EDUCATION</h2>
-        <div className={styles.jobRoleTitle}>
-          <div className={styles.jobTitleName}>
-            <h3>Bachor's of Engineering in Mechanical Engineering</h3>
-          </div>
-          <div className={styles.duration}>Oct 2026</div>
-        </div>
-        <p>College Name</p>
-        <p>Perecentage</p>
-      </section>
+      {educationDetails.length > 0 && (
+        <section className={styles.s4}>
+          <h2>EDUCATION</h2>
+          {educationDetails.map((item) => (
+            <div className={styles.jobRoleTitle} key={item.id}>
+              <div className={styles.jobTitleName}>
+                {item.degree && (
+                  <h3>{`${item.degree} in ${item.fieldOfStudy}`}</h3>
+                )}
+              </div>
+              {item.dateComplete && (
+                <div className={styles.duration}>
+                  {customDate(item.dateComplete)}
+                </div>
+              )}
+              <p>{item.name}</p>
+              <p>{item.gpa}</p>
+            </div>
+          ))}
+        </section>
+      )}
     </div>
   );
 }

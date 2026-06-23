@@ -1,18 +1,60 @@
-import React from "react";
+import React, { useContext } from "react";
 
-import styles from './EducationForm.module.css';
+import styles from "./EducationForm.module.css";
 import FormWithTitle from "../../Form/FormWithTitle";
+import EducationContext from "../../../../context/educationStore";
 
-export default function EducationForm({ id, deleteId }) {
+export default function EducationForm({ item }) {
+  const { updateEducationForm, deleteEducationForm } =
+    useContext(EducationContext);
+
   return (
-    <FormWithTitle title={'Education'} id={id} fun={deleteId}>
-        <div className={styles.inputContainer}>
-            <input type="text" placeholder="Institution Name" />
-            <input type="text" placeholder="Degree(e.g., Bachelor's, Master)" />
-            <input type="text" placeholder="Field of Study" />
-            <input type="date"  />
-            <input type="number" placeholder="GPA(optional)" />
-        </div>
+    <FormWithTitle
+      title={"Education"}
+      id={item.id}
+      fun={() => deleteEducationForm(item.id)}
+    >
+      <div className={styles.inputContainer}>
+        <input
+          type="text"
+          placeholder="Institution Name"
+          onChange={(e) =>
+            updateEducationForm(item.id, { name: e.target.value })
+          }
+          value={item.name}
+        />
+        <input
+          type="text"
+          placeholder="Degree(e.g., Bachelor's, Master)"
+          onChange={(e) =>
+            updateEducationForm(item.id, { degree: e.target.value })
+          }
+          value={item.degree}
+        />
+        <input
+          type="text"
+          placeholder="Field of Study"
+          onChange={(e) =>
+            updateEducationForm(item.id, { fieldOfStudy: e.target.value })
+          }
+          value={item.fieldOfStudy}
+        />
+        <input
+          type="month"
+          onChange={(e) =>
+            updateEducationForm(item.id, { dateComplete: e.target.value })
+          }
+          value={item.dateComplete}
+        />
+        <input
+          type="number"
+          placeholder="GPA(optional)"
+          onChange={(e) =>
+            updateEducationForm(item.id, { gpa: e.target.value })
+          }
+          value={item.gpa}
+        />
+      </div>
     </FormWithTitle>
   );
 }

@@ -8,8 +8,6 @@ import ProfessionalExpContext from "../../../context/professionalExpStore";
 export default function ProfessionalExp() {
   const { expDetails, addForm } = useContext(ProfessionalExpContext);
 
-  console.log(expDetails)
-
   let content = expDetails.map((item) => (
     <ExperienceForm key={item.id} item={item}/>
   ));
