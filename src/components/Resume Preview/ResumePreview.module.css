@@ -8,50 +8,47 @@
     border: 1px solid #d1d5db;
 }
 
-.personalData{
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    border-bottom: 2px solid rgb(54, 151, 54);
-    padding-bottom: 15px;
-    margin-bottom: 20px;
-} h1 {
-    padding: 10px;
-    color: rgb(54, 151, 54);
-} 
-
-.p1{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-} span {
-    padding: 5px;
-    display: inline-block;
+.s1 h2{
+    color: var(--success-color);
 }
 
-.s1 {
-    margin-bottom: 15px;
-} h2 {
-    padding: 10px 0;
+.container {
+  margin-bottom: 15px;
+}
+h2 {
+  padding: 10px 0;
 }
 
-.jobTitle{
-    padding-left: 20px;
-    border-left: 3px solid grey;
-    margin-bottom: 20px;
-} h3 {
-    padding-bottom: 5px;
+.container1 {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
 }
 
-.jobRoleTitle {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 10px;
+.title {
+  padding-left: 20px;
+  border-left: 3px solid grey;
+  margin-bottom: 20px;
 }
 
-.duration {
+h3 {
+  padding-bottom: 5px;
+}
+
+.dates{
     color: gray;
 }
+
+.itemsContainer{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 30px;
+    box-sizing: border-box;
+}
+
+.itemsContainer li{
+    text-decoration: none;
+}
+
+
 

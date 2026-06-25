@@ -1,0 +1,22 @@
+.personalData{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 2px solid var(--success-color);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+} h1 {
+    padding: 10px;
+    color: var(--success-color);
+} 
+
+.p1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+} span {
+    padding: 5px;
+    display: inline-block;
+}

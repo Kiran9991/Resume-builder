@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styles from "./ResumeForm.module.css";
-import { PrintPdf } from "../components/Resume Preview/ResumePreview";
 
 import ResumePreview from "../components/Resume Preview/ResumePreview";
 import PersonalDataForm from "../components/Resume form contents/Personal Data/PersonalDataForm";
@@ -10,6 +9,7 @@ import ProfessionalExp from "../components/Resume form contents/Professional Exp
 import Education from "../components/Resume form contents/Education/Education";
 import Project from "../components/Resume form contents/Projects/Project";
 import Skills from "../components/Resume form contents/Skills/Skills";
+import PrintPdf from "../utils/printPDF";
 
 export default function ResumeForm() {
   const ResumeContentArr = [
