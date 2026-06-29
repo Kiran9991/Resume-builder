@@ -6,6 +6,8 @@
 
 :root {
   --success-color: rgb(54, 151, 54);
+  --border-color: #d1d5db;
+  --bg-color: rgb(250, 248, 248);
 }
 
 button {

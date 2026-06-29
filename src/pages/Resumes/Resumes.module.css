@@ -1,0 +1,46 @@
+.container {
+  background-color: var(--bg-color);
+  height: 100%;
+  width: 100%;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.container1 {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  border-bottom: 1.5px solid var(--border-color);
+  box-sizing: border-box;
+}
+
+.container1 div {
+  height: 200px;
+  width: 150px;
+  background-color: white;
+  border: 1px dotted var(--border-color);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.container2 {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.container2 div {
+  height: 200px;
+  width: 150px;
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
