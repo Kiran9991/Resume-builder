@@ -9,7 +9,6 @@ import ProfessionalExp from "../components/Resume form contents/Professional Exp
 import Education from "../components/Resume form contents/Education/Education";
 import Project from "../components/Resume form contents/Projects/Project";
 import Skills from "../components/Resume form contents/Skills/Skills";
-import PrintPdf from "../utils/printPDF";
 
 export default function ResumeForm() {
   const ResumeContentArr = [
@@ -37,14 +36,18 @@ export default function ResumeForm() {
     count > 0 && setCount((prev) => prev - 1);
   };
 
+  const downloadResume = () => {
+    window.print();
+  }
+
   return (
     <div className={styles.resumeContainer}>
       <div className={styles.btnSection}>
-        <button className={styles.share} onClick={PrintPdf}>
+        <button className={styles.share}>
           Share
         </button>
         <button className={styles.public}>Public</button>
-        <button className={styles.downloadbtn}>Download</button>
+        <button className={styles.downloadbtn} onClick={downloadResume}>Download</button>
       </div>
 
       <div className={styles.resumeFormContainer}>

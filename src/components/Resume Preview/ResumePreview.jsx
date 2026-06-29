@@ -18,7 +18,7 @@ export default function ResumePreview() {
   const { skills } = useContext(SkillsContext);
 
   return (
-    <div className={styles.previewSection} id="resumeDownload">
+    <div className={styles.previewSection} id="resume-preview">
       <ResumeHeader />
 
       {professionalSummary && (
