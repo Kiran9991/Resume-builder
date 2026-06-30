@@ -4,6 +4,8 @@ import styles from "./Resumes.module.css";
 import ResumesContext from "../../context/ResumeStore";
 import trashIcon from "../../../public/trash.png";
 import editIcon from "../../../public/edit.png";
+import addIcon from '../../../public/plus.png';
+import uploadIcon from '../../../public/cloud-computing.png';
 
 export default function Resumes() {
   const { resumes, addResume, deleteResume } = useContext(ResumesContext);
@@ -12,8 +14,22 @@ export default function Resumes() {
     <div className={styles.container}>
       {/* Resume Create */}
       <div className={styles.container1}>
-        <button onClick={() => addResume()}>Create Resume</button>
-        <button>Upload Existing</button>
+        <button onClick={() => addResume()}>
+          <div>
+            <img src={addIcon} height={50}/>
+          </div>
+          <div>
+            Create Resume
+          </div>
+          </button>
+        <button>
+          <div>
+            <img src={uploadIcon} height={50}/>
+          </div>
+          <div>
+            Upload Existing
+          </div>
+        </button>
       </div>
 
       <hr />
@@ -26,10 +42,10 @@ export default function Resumes() {
               <div className={styles.icon}
               onClick={() => deleteResume(item.id)}
               >
-                <img src={trashIcon} height="16px" />
+                <img src={trashIcon} height={16} />
               </div>
               <div className={styles.icon}>
-                <img src={editIcon} height="16px" />
+                <img src={editIcon} height={16} />
               </div>
             </div>
             <div className={styles.btnName}>{item.title}</div>

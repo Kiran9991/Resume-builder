@@ -25,9 +25,19 @@
   border: 1px dashed var(--border-color);
   border-radius: 10px;
   display: flex;
+  flex-direction: column;
+  gap: 5px;
   justify-content: center;
   padding: 5px;
   align-items: center;
+}
+
+.container1 button:nth-child(1):hover {
+    border: 1px dashed rgb(47, 156, 192);
+}
+
+.container1 button:nth-child(2):hover {
+    border: 1px dashed rgb(207, 36, 199);
 }
 
 .container1 button:hover,
