@@ -5,11 +5,11 @@ import Resumes from "./pages/Resumes/Resumes";
 
 function App() {
   return (
-    <>
+    <div className={StyleSheet}>
       <Header />
       {/* <ResumeForm /> */}
       <Resumes/>
-    </>
+    </div>
   );
 }
 
