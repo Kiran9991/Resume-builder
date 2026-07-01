@@ -5,7 +5,7 @@ import Resumes from "./pages/Resumes/Resumes";
 
 function App() {
   return (
-    <div className={StyleSheet}>
+    <div>
       <Header />
       {/* <ResumeForm /> */}
       <Resumes/>

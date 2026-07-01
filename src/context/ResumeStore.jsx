@@ -7,11 +7,11 @@ export default ResumesContext;
 export function ResumesProvider({ children }) {
     const [resumes, setResumes] = useState([]);
 
-    const addResumeHandler = () => {
-        // if(!name) return;
+    const addResumeHandler = (name) => {
+        if(!name) return;
         setResumes((prev) => {
             const newId = prev.length > 0 ? prev[prev.length - 1].id + 1 : 1;
-            return [...prev, { id: newId, title: 'Resume no. '+newId }];
+            return [...prev, { id: newId, title: name }];
         })
     }
 
