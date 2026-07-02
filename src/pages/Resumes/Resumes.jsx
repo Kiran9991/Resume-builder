@@ -52,7 +52,7 @@ export default function Resumes() {
               </div>
             </div>
             <div className={styles.btnName}>{item.title}</div>
-            <div>updated</div>
+            <div className={styles.date}>Updated on {item.date}</div>
           </button>
         ))}
       </div>
