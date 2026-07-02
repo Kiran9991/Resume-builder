@@ -2,15 +2,17 @@ import React, { useContext, useState } from "react";
 import ResumesContext from "../../../context/ResumeStore";
 import styles from "./ResumeCreatorForm.module.css";
 import closeIcon from "../../../../public/cross.png";
+import { useNavigate } from "react-router-dom";
 
 export default function ResumeCreatorForm({ onClose }) {
   const { addResume } = useContext(ResumesContext);
   const [enteredtitle, setEnteredTitle] = useState("");
+  const navigate = useNavigate();
 
   const submitFormHandler = (e) => {
     e.preventDefault();
     addResume(enteredtitle);
-    onClose();
+    navigate("/resume");
   };
 
   return (

@@ -4,6 +4,7 @@ import "@fontsource/outfit";
 import "@fontsource/outfit/700.css";
 import "./index.css";
 import App from "./App.jsx";
+import { BrowserRouter } from 'react-router-dom';
 import { PersonalInfoProvider } from "./context/personalInfoStore.jsx";
 import { ProfessionalSummaryProvider } from "./context/professionalSummaryStore.jsx";
 import { ProfessionalExpProvider } from "./context/professionalExpStore.jsx";
@@ -14,6 +15,7 @@ import { ResumesProvider } from "./context/ResumeStore.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
+    <BrowserRouter>
     <PersonalInfoProvider>
       <ProfessionalSummaryProvider>
         <ProfessionalExpProvider>
@@ -29,5 +31,6 @@ createRoot(document.getElementById("root")).render(
         </ProfessionalExpProvider>
       </ProfessionalSummaryProvider>
     </PersonalInfoProvider>
+    </BrowserRouter>
   </StrictMode>,
 );

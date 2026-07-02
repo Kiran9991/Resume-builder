@@ -41,6 +41,7 @@ export default function ResumeForm() {
   }
 
   return (
+    <div className={styles.resumeContainerWrapper}>
     <div className={styles.resumeContainer}>
       <div className={styles.btnSection}>
         <button className={styles.share}>
@@ -67,6 +68,7 @@ export default function ResumeForm() {
 
         <ResumePreview />
       </div>
+    </div>
     </div>
   );
 }

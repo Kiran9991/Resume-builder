@@ -8,10 +8,12 @@ import addIcon from "../../../public/plus.png";
 import uploadIcon from "../../../public/cloud-computing.png";
 import Modal from "../../modal/Modal";
 import ResumeCreatorForm from "./Form/ResumeCreatorForm";
+import { useNavigate } from "react-router-dom";
 
 export default function Resumes() {
   const { resumes, deleteResume } = useContext(ResumesContext);
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div className={styles.container}>
@@ -39,7 +41,7 @@ export default function Resumes() {
       {/* Resumes Lists */}
       <div className={styles.container2}>
         {resumes.map((item) => (
-          <button key={item.id}>
+          <button key={item.id} onClick={() => navigate("/resume")}>
             <div className={styles.editButtons}>
               <div
                 className={styles.icon}
