@@ -4,7 +4,7 @@ import "@fontsource/outfit";
 import "@fontsource/outfit/700.css";
 import "./index.css";
 import App from "./App.jsx";
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from "react-router-dom";
 import { PersonalInfoProvider } from "./context/personalInfoStore.jsx";
 import { ProfessionalSummaryProvider } from "./context/professionalSummaryStore.jsx";
 import { ProfessionalExpProvider } from "./context/professionalExpStore.jsx";

@@ -19,7 +19,7 @@ export default function ResumeCreatorForm({ onClose }) {
     <form onSubmit={submitFormHandler} className={styles.formContainer}>
       <div>
         <h3>Create a Resume</h3>
-        <img src={closeIcon} height={20} />
+        <img src={closeIcon} height={20} onClick={() => onClose()} />
       </div>
       <input
         type="text"

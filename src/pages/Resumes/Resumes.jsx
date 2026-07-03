@@ -18,7 +18,7 @@ export default function Resumes() {
   return (
     <div className={styles.container}>
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <ResumeCreatorForm onClose={() => setIsOpen(false)}/>
+        <ResumeCreatorForm onClose={() => setIsOpen(false)} />
       </Modal>
       {/* Resume Create */}
       <div className={styles.container1}>
@@ -45,7 +45,10 @@ export default function Resumes() {
             <div className={styles.editButtons}>
               <div
                 className={styles.icon}
-                onClick={() => deleteResume(item.id)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  deleteResume(item.id);
+                }}
               >
                 <img src={trashIcon} height={16} />
               </div>
