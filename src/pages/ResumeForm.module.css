@@ -52,6 +52,7 @@
   height: 100%;
   width: 100%;
   display: flex;
+  gap: 40px;
   justify-content: space-between;
   background-color: rgb(250, 248, 248);
 }
@@ -63,7 +64,7 @@
   border-radius: 0.5rem;
   height: 100%;
   width: 100%;
-  max-width: 30rem;
+  max-width: 32rem;
   padding: 10px 20px;
   border: 1px solid #d1d5db;
   border-top: 0;
