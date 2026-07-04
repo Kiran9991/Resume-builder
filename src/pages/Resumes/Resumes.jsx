@@ -41,7 +41,7 @@ export default function Resumes() {
       {/* Resumes Lists */}
       <div className={styles.container2}>
         {resumes.map((item) => (
-          <button key={item.id} onClick={() => navigate("/resume")}>
+          <button key={item.id} onClick={() => navigate(`/resume/${item.id}`)}>
             <div className={styles.editButtons}>
               <div
                 className={styles.icon}

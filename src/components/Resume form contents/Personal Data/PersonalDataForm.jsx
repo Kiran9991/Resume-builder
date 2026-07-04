@@ -3,11 +3,15 @@ import React, { useContext } from "react";
 import FormTitle from "../Form/Form Title/FormTitle";
 import Inputs from "../Form/Inputs/Inputs";
 import PersonalInfoContext, { PersonalInfoProvider } from "../../../context/personalInfoStore";
+import { useParams } from "react-router-dom";
+import ResumesContext from "../../../context/ResumeStore";
 
 export default function PersonalDataForm() {
 const { personObj, setPersonObj } = useContext(PersonalInfoContext);
+const { resumes, updateResumeData } = useContext(ResumesContext);
+const { id } = useParams();
 
-// console.log(personObj)
+const personObjs = resumes.filter((item) => item.id == id);
   
   return (
     <>
@@ -18,8 +22,8 @@ const { personObj, setPersonObj } = useContext(PersonalInfoContext);
 
       <form>
         <Inputs text="Full name" type="text" 
-        fun={(s) => setPersonObj({ ...personObj, name: s })}
-        val={personObj && personObj.name == 'Your Name' ? '' : personObj.name}
+        fun={(s) => updateResumeData(id, { ...personObjs[0], name: s })}
+        val={personObjs[0].data.personalInfo.name}
         />
         <Inputs
           text="Email Address"

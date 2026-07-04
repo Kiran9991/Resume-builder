@@ -5,14 +5,15 @@ import closeIcon from "../../../../public/cross.png";
 import { useNavigate } from "react-router-dom";
 
 export default function ResumeCreatorForm({ onClose }) {
-  const { addResume } = useContext(ResumesContext);
+  const { addResume, resumes } = useContext(ResumesContext);
   const [enteredtitle, setEnteredTitle] = useState("");
   const navigate = useNavigate();
 
   const submitFormHandler = (e) => {
     e.preventDefault();
     addResume(enteredtitle);
-    navigate("/resume");
+    const newId = resumes.length > 0 ? resumes[resumes.length - 1].id + 1 : 1;
+    navigate(`/resume/${newId}`);
   };
 
   return (

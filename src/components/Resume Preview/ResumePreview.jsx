@@ -12,14 +12,22 @@ import ProfessionalExpPreview from "./ProfessionalExp Preview/ProfessionalExpPre
 import ProjectPreview from "./Projects preview/ProjectPreview";
 import Education from "../Resume form contents/Education/Education";
 import EducationPreview from "./Education Preview/EducationPreview";
+import ResumesContext from "../../context/ResumeStore";
+import { useParams } from "react-router-dom";
 
 export default function ResumePreview() {
+  const { resumes } = useContext(ResumesContext);
+  const { id } = useParams();
   const { professionalSummary } = useContext(ProfessionalSummaryContext);
   const { skills } = useContext(SkillsContext);
 
+  const obj = resumes.filter((item) => item.id == id);
+
+  // console.log(resumes, obj)
+
   return (
     <div className={styles.previewSection} id="resume-preview">
-      <ResumeHeader />
+      <ResumeHeader obj={obj[0].data.personalInfo}/>
 
       {professionalSummary && (
         <section className={styles.s1}>

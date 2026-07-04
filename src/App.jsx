@@ -10,7 +10,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Resumes />} />
-        <Route path="/resume" element={<ResumeForm />} />
+        <Route path="/resume/:id" element={<ResumeForm />} />
       </Routes>
     </>
   );
