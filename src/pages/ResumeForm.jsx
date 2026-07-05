@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./ResumeForm.module.css";
 
 import ResumePreview from "../components/Resume Preview/ResumePreview";
@@ -9,15 +9,22 @@ import ProfessionalExp from "../components/Resume form contents/Professional Exp
 import Education from "../components/Resume form contents/Education/Education";
 import Project from "../components/Resume form contents/Projects/Project";
 import Skills from "../components/Resume form contents/Skills/Skills";
+import { useParams } from "react-router-dom";
+import ResumesContext from "../context/ResumeStore";
 
 export default function ResumeForm() {
+  const { id } = useParams();
+  const { resumes } = useContext(ResumesContext);
+
+  const resumeData = resumes.filter(item => item.id == id);
+
   const ResumeContentArr = [
-    <PersonalDataForm />,
-    <ProfessionalSummary />,
-    <ProfessionalExp />,
-    <Education />,
-    <Project />,
-    <Skills />,
+    <PersonalDataForm resumeData={resumeData[0]} />,
+    <ProfessionalSummary resumeData={resumeData[0]} />,
+    <ProfessionalExp resumeData={resumeData[0]} />,
+    <Education resumeData={resumeData[0]} />,
+    <Project resumeData={resumeData[0]} />,
+    <Skills resumeData={resumeData[0]} />,
   ];
 
   const limitOfResumeContent = ResumeContentArr.length - 1;

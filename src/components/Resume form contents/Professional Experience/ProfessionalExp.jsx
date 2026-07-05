@@ -5,7 +5,7 @@ import ExperienceForm from "./Form/ExperienceForm";
 import EmptyItems from "../Empty Items/EmptyItems";
 import ProfessionalExpContext from "../../../context/professionalExpStore";
 
-export default function ProfessionalExp() {
+export default function ProfessionalExp({ resumeData }) {
   const { expDetails, addForm } = useContext(ProfessionalExpContext);
 
   let content = expDetails.map((item) => (

@@ -1,16 +1,16 @@
-import React, { useContext } from "react";
-import ProfessionalExpContext from "../../../context/professionalExpStore";
+import React from "react";
+// import ProfessionalExpContext from "../../../context/professionalExpStore";
 import customDate from "../../../utils/customDate";
 import styles from "./ProfessionalExpPreview.module.css";
 
-export default function ProfessionalExpPreview() {
-  const { expDetails } = useContext(ProfessionalExpContext);
+export default function ProfessionalExpPreview({ objArr }) {
+  // const { expDetails } = useContext(ProfessionalExpContext);
   return (
     <>
-      {expDetails.length > 0 && (
+      {objArr.length > 0 && (
         <section className={styles.container}>
           <h2>PROFESSIONAL EXPERIENCE</h2>
-          {expDetails.map((item) => (
+          {objArr.map((item) => (
             <div key={item.id} className={styles.container1}>
               <div className={styles.titleContainer}>
                 <div className={styles.title}>
