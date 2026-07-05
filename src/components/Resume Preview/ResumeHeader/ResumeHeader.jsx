@@ -1,10 +1,8 @@
-import React, { useContext } from "react";
+import React from "react";
 import styles from "./ResumeHeader.module.css";
 import PersonalInfoContext from "../../../context/personalInfoStore";
 
 export default function ResumeHeader({ obj }) {
-  const { personObj } = useContext(PersonalInfoContext);
-
 
   return (
     <div className={styles.personalData}>

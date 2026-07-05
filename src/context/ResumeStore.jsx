@@ -22,7 +22,7 @@ export function ResumesProvider({ children }) {
         { id: newId, title: name, date: new Date().toLocaleDateString(),
             data:{
               personalInfo:{
-                name:'',email:'',phNumber:'',address:'',linkedin:'',website:'',
+                name:'Your Name',email:'',phNumber:'',address:'',linkedin:'',website:'',
               },
               professionalSummary:'',
               professionalExp:[],
@@ -47,7 +47,8 @@ export function ResumesProvider({ children }) {
 
   const updateResumeDataHandler = (id, obj) => {
     setResumes((prev) => 
-      prev.map((item) => item.id == id ? { ...item, data: { personalInfo: { ...item.data.personalInfo, ...obj } } } : item ));
+      prev.map((item) => item.id == id ? { ...item, 
+        data: { personalInfo: { ...item.data.personalInfo, ...obj } } } : item ));
   }
 
   const obj = {
