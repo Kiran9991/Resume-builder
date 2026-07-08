@@ -1,12 +1,15 @@
 import React, { useContext } from "react";
+import { useParams } from "react-router-dom";
 import Inputs from "../Form/Inputs/Inputs";
 import FormTitle from "../Form/Form Title/FormTitle";
 import styles from "./ProfessionalSummary.module.css";
 import ProfessionalSummaryContext from "../../../context/professionalSummaryStore";
-import ResumesContext from "../../../context/ResumeStore";
 
-export default function ProfessionalSummary({ resumeData }) {
-  const { updateProfessionalSummary } = useContext(ResumesContext);
+export default function ProfessionalSummary() {
+  const { professionalSummary, setProfessionalSummary } = useContext(ProfessionalSummaryContext);
+  const { id } = useParams();
+
+  const professionalSummaryObj = professionalSummary.find(item => item.resumeId == id) || {};
 
   return (
     <FormTitle
@@ -19,8 +22,8 @@ export default function ProfessionalSummary({ resumeData }) {
         cols={70}
         placeholder="Write a compelling professional summary that highlights your key strengths and career objectives..."
         className={styles.textArea}
-        onChange={(e) => updateProfessionalSummary(resumeData.id, e.target.value)}
-        value={resumeData.data.professionalSummary}
+        onChange={(e) => setProfessionalSummary(id, { summary: e.target.value })}
+        value={professionalSummaryObj.summary}
       />
     </FormTitle>
   );

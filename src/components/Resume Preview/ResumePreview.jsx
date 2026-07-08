@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 
 import styles from "./ResumePreview.module.css";
 import PersonalInfoContext from "../../context/personalInfoStore";
+import ProfessionalSummaryContext from "../../context/professionalSummaryStore";
 import ProfessionalExpContext from "../../context/professionalExpStore";
 import EducationContext from "../../context/educationStore";
 import ProjectContext from "../../context/projectStore";
@@ -16,23 +17,23 @@ import { useParams } from "react-router-dom";
 
 export default function ResumePreview() {
   const { personalInfo } = useContext(PersonalInfoContext);
+  const { professionalSummary } = useContext(ProfessionalSummaryContext);
   const { resumes } = useContext(ResumesContext);
   const { id } = useParams();
   const { skills } = useContext(SkillsContext);
 
   const obj = resumes.filter((item) => item.id == id);
   const personalInfoObj = personalInfo.find(item => item.resumeId == id) || {};
-
-  // console.log(resumes, obj)
+  const professionalSummaryObj = professionalSummary.find(item => item.resumeId == id) || {};
 
   return (
     <div className={styles.previewSection} id="resume-preview">
       <ResumeHeader obj={personalInfoObj}/>
 
-      {obj[0].data.professionalSummary && (
+      {professionalSummaryObj.summary  && (
         <section className={styles.s1}>
           <h2>Profession Summary</h2>
-          <p>{obj[0].data.professionalSummary}</p>
+          <p>{professionalSummaryObj.summary}</p>
         </section>
       )}
 
