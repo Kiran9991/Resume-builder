@@ -15,17 +15,19 @@ import ResumesContext from "../../context/ResumeStore";
 import { useParams } from "react-router-dom";
 
 export default function ResumePreview() {
+  const { personalInfo } = useContext(PersonalInfoContext);
   const { resumes } = useContext(ResumesContext);
   const { id } = useParams();
   const { skills } = useContext(SkillsContext);
 
   const obj = resumes.filter((item) => item.id == id);
+  const personalInfoObj = personalInfo.find(item => item.resumeId == id) || {};
 
   // console.log(resumes, obj)
 
   return (
     <div className={styles.previewSection} id="resume-preview">
-      <ResumeHeader obj={obj[0].data.personalInfo}/>
+      <ResumeHeader obj={personalInfoObj}/>
 
       {obj[0].data.professionalSummary && (
         <section className={styles.s1}>

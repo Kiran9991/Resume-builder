@@ -5,24 +5,23 @@ const PersonalInfoContext = createContext();
 export default PersonalInfoContext;
 
 function PersonalInfoProvider({ children }) {
-  const LsObj = {
-    name: "Your Name",
-    ...JSON.parse(localStorage.getItem("userObj")),
-  };
+  const [personalInfo, setPersonalInfo] = useState([]);
 
-  const [personalInfoObj, setPersonalInfoObj] = useState(LsObj);
+  const setPersonalInfoHandler = (id, obj) => {
+    setPersonalInfo(prev => {
+      const exist = prev.some(item => item.resumeId === id);
 
-  useEffect(() => {
-    localStorage.setItem("userObj", JSON.stringify(personalInfoObj));
-  }, [personalInfoObj]);
+      if(exist) {
+        return prev.map(item => item.resumeId == id ? { ...item, ...obj } : item);
+      }
 
-  const setPersonalInfoObjHandler = (obj) => {
-    setPersonalInfoObj(obj);
+      return [...prev, { resumeId: id, ...obj }];
+    });
   };
 
   const obj = {
-    personObj: personalInfoObj,
-    setPersonObj: setPersonalInfoObjHandler,
+    personalInfo,
+    setPersonalInfo: setPersonalInfoHandler,
   };
 
   return (
