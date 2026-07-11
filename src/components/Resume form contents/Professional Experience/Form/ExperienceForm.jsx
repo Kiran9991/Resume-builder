@@ -5,31 +5,31 @@ import FormWithTitle from "../../Form/FormWithTitle";
 import ProfessionalExpContext from "../../../../context/professionalExpStore";
 
 export default function ExperienceForm({ item }) {
-  const { updateForm, deleteForm } = useContext(ProfessionalExpContext);
-
+  const { updateExpform, deleteExpForm } = useContext(ProfessionalExpContext);
+  
   return (
-    <FormWithTitle title={"Experience"} id={item.id} fun={() => deleteForm(item.id)}>
+    <FormWithTitle title={"Experience"} id={item.formId} fun={() => deleteExpForm(item.formId)}>
       <div className={styles.inputContainer}>
         <input
           type="text"
           placeholder="Company Name"
-          onChange={(e) => updateForm(item.id, { companyName: e.target.value } )}
+          onChange={(e) => updateExpform(item.formId, { companyName: e.target.value } )}
           value={item.companyName}
         />
         <input
           type="text"
           placeholder="Job Title"
-          onChange={(e) => updateForm(item.id, { jobTitle: e.target.value })}
+          onChange={(e) => updateExpform(item.formId, { jobTitle: e.target.value })}
           value={item.jobTitle}
         />
         <input
           type="month"
-          onChange={(e) => updateForm(item.id, { joiningDate: e.target.value })}
+          onChange={(e) => updateExpform(item.formId , { joiningDate: e.target.value })}
           value={item.joiningDate}
         />
         <input
           type="month"
-          onChange={(e) => updateForm(item.id, { endDate: e.target.value })}
+          onChange={(e) => updateExpform(item.formId, { endDate: e.target.value })}
           value={item.endDate}
           disabled={item.currentlyWorking}
         />
@@ -39,7 +39,7 @@ export default function ExperienceForm({ item }) {
           type="checkbox"
           checked={item.currentlyWorking}
           onChange={(e) =>
-            updateForm(item.id, { currentlyWorking: e.target.checked })
+            updateExpform(item.formId, { currentlyWorking: e.target.checked })
           }
         />
         <label>Currently working here</label>
@@ -53,7 +53,7 @@ export default function ExperienceForm({ item }) {
         placeholder="Describe your key responsibilities and achievements..."
         rows={5}
         cols={60}
-        onChange={(e) => updateForm(item.id, { jobDescription: e.target.value })}
+        onChange={(e) => updateExpform(item.formId, { jobDescription: e.target.value })}
         value={item.jobDescription}
       />
     </FormWithTitle>

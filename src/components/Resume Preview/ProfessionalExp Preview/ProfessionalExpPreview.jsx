@@ -3,15 +3,14 @@ import ProfessionalExpContext from "../../../context/professionalExpStore";
 import customDate from "../../../utils/customDate";
 import styles from "./ProfessionalExpPreview.module.css";
 
-export default function ProfessionalExpPreview() {
-  const { expDetails } = useContext(ProfessionalExpContext);
+export default function ProfessionalExpPreview({ objArr }) {
   return (
     <>
-      {expDetails.length > 0 && (
+      {objArr && (
         <section className={styles.container}>
           <h2>PROFESSIONAL EXPERIENCE</h2>
-          {expDetails.map((item) => (
-            <div key={item.id} className={styles.container1}>
+          {objArr.map((item) => (
+            <div key={item.formId} className={styles.container1}>
               <div className={styles.titleContainer}>
                 <div className={styles.title}>
                   <h3>{item.jobTitle}</h3>

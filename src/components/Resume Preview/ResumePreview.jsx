@@ -18,13 +18,14 @@ import { useParams } from "react-router-dom";
 export default function ResumePreview() {
   const { personalInfo } = useContext(PersonalInfoContext);
   const { professionalSummary } = useContext(ProfessionalSummaryContext);
+  const { expData } = useContext(ProfessionalExpContext);
   const { resumes } = useContext(ResumesContext);
   const { id } = useParams();
   const { skills } = useContext(SkillsContext);
 
-  const obj = resumes.filter((item) => item.id == id);
   const personalInfoObj = personalInfo.find(item => item.resumeId == id) || {};
   const professionalSummaryObj = professionalSummary.find(item => item.resumeId == id) || {};
+  const professionalExpObj = expData.find(item => item.resumeId == id) || {};
 
   return (
     <div className={styles.previewSection} id="resume-preview">
@@ -38,7 +39,7 @@ export default function ResumePreview() {
       )}
 
       {/* Professional Experience */}
-      <ProfessionalExpPreview objArr={obj[0].data.professionalExp} />
+      <ProfessionalExpPreview objArr={professionalExpObj.arrOfObj} />
 
       {/* Projects */}
       <ProjectPreview />
