@@ -14,7 +14,7 @@ export default function ProfessionalExp({ resumeData }) {
     <ExperienceForm key={item.formId} item={item}/>
   ));
 
-  if (expData.length == 0) {
+  if (expDataObj.arrOfObj.length == 0) {
     content = <EmptyItems text1={"work experience"} text2={"Add Experience"} />;
   }
 

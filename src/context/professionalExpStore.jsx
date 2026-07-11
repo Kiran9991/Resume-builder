@@ -21,11 +21,15 @@ export function ProfessionalExpProvider({ children }) {
         })
   };
 
-  const updateExpDetailsFormHandler = (id, obj) => {
-
+  const updateExpDetailsFormHandler = (resumeId, formId, obj) => {
+    setExpdata(prev => prev.map(item => item.resumeId == resumeId ? { ...item,
+        arrOfObj: item.arrOfObj.map(objItem => objItem.formId == formId ? { ...objItem, ...obj} : objItem)
+    } : item));
   };
 
-  const deleteExpDetailsFormHandler = (id) => {
+  const deleteExpDetailsFormHandler = (resumeId, formId) => {
+    setExpdata(prev => prev.map(item => item.resumeId == resumeId ? { ...item, 
+      arrOfObj: item.arrOfObj.filter(objItem => objItem.formId != formId) } : item));
   };
 
   const expDetailsObj = {
