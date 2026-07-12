@@ -1,16 +1,8 @@
 import React, { useContext, useState } from "react";
-import styles from "./ResumeForm.module.css";
-
-import ResumePreview from "../components/Resume Preview/ResumePreview";
-import PersonalDataForm from "../components/Resume form contents/Personal Data/PersonalDataForm";
-import FormTitleButton from "../components/Resume form contents/Form/Form Title buttons/FormTitleButton";
-import ProfessionalSummary from "../components/Resume form contents/Professional Summary/ProfessionalSummary";
-import ProfessionalExp from "../components/Resume form contents/Professional Experience/ProfessionalExp";
-import Education from "../components/Resume form contents/Education/Education";
-import Project from "../components/Resume form contents/Projects/Project";
-import Skills from "../components/Resume form contents/Skills/Skills";
 import { useParams } from "react-router-dom";
-import ResumesContext from "../context/ResumeStore";
+import styles from "./ResumeForm.module.css";
+import { ResumePreview, PersonalDataForm, FormTitleButton, ProfessionalSummary, ProfessionalExp, Education, 
+  Project, Skills, ResumesContext, Bar } from "../components";  
 
 export default function ResumeForm() {
   const { id } = useParams();
@@ -60,12 +52,7 @@ export default function ResumeForm() {
 
       <div className={styles.resumeFormContainer}>
         <div className={styles.formSection}>
-
-          <div className={styles.progressBar}>
-            </div>
-            <div className={styles.bar} 
-            style={{ width: `${percentage}%` }} />
-
+          <Bar percentage={percentage} />
           <FormTitleButton prev={decrementCount} next={increamentCount} />
           {content}
           <div className={styles.saveBth}>

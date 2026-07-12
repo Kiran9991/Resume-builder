@@ -9,6 +9,7 @@ import uploadIcon from "../../../public/cloud-computing.png";
 import Modal from "../../modal/Modal";
 import ResumeCreatorForm from "./Form/ResumeCreatorForm";
 import { useNavigate } from "react-router-dom";
+import ResumeCard from "./Card/ResumeCard";
 
 export default function Resumes() {
   const { resumes, deleteResume } = useContext(ResumesContext);
@@ -41,24 +42,7 @@ export default function Resumes() {
       {/* Resumes Lists */}
       <div className={styles.container2}>
         {resumes.map((item) => (
-          <button key={item.id} onClick={() => navigate(`/resume/${item.id}`)}>
-            <div className={styles.editButtons}>
-              <div
-                className={styles.icon}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  deleteResume(item.id);
-                }}
-              >
-                <img src={trashIcon} height={16} />
-              </div>
-              <div className={styles.icon}>
-                <img src={editIcon} height={16} />
-              </div>
-            </div>
-            <div className={styles.btnName}>{item.title}</div>
-            <div className={styles.date}>Updated on {item.date}</div>
-          </button>
+          <ResumeCard key={item.id} item={item} />
         ))}
       </div>
     </div>

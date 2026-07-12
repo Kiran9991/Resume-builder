@@ -6,7 +6,7 @@ import styles from "./ProfessionalExpPreview.module.css";
 export default function ProfessionalExpPreview({ objArr }) {
   return (
     <>
-      {objArr.length > 0 && (
+      {objArr && (
         <section className={styles.container}>
           <h2>PROFESSIONAL EXPERIENCE</h2>
           {objArr.map((item) => (

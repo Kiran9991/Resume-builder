@@ -1,0 +1,16 @@
+.progressBar {
+  top: 0%;
+  right: 0;
+  left: 0;
+  border: 2px solid #d1d5db;
+  position: absolute;
+}
+
+.bar {
+  top: 0;
+  left: 0;
+  height: 4px;
+  background-color: rgb(15, 197, 15);
+  position:absolute;
+  transition: 1s ease-in;
+}
