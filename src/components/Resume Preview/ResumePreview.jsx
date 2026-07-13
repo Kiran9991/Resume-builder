@@ -23,41 +23,56 @@ export default function ResumePreview() {
   const { id } = useParams();
   const { skills } = useContext(SkillsContext);
 
-  const personalInfoObj = personalInfo.find(item => item.resumeId == id) || {};
-  const professionalSummaryObj = professionalSummary.find(item => item.resumeId == id) || {};
-  const professionalExpObj = expData.find(item => item.resumeId == id) || {};
+  const personalInfoObj =
+    personalInfo.find((item) => item.resumeId == id) || {};
+  const professionalSummaryObj =
+    professionalSummary.find((item) => item.resumeId == id) || {};
+  const professionalExpObj = expData.find((item) => item.resumeId == id) || {};
+
+   const downloadResume = () => {
+    window.print();
+  };
 
   return (
-    <div className={styles.previewSection} id="resume-preview">
-      <ResumeHeader obj={personalInfoObj}/>
+    <div className={styles.previewcontainer}>
+      <div className={styles.btnSection}>
+        <button className={styles.share}>Share</button>
+        <button className={styles.public}>Public</button>
+        <button className={styles.downloadbtn} onClick={downloadResume}>
+          Download
+        </button>
+      </div>
+      <div className={styles.previewSection} id="resume-preview">
+        <ResumeHeader obj={personalInfoObj} />
 
-      {professionalSummaryObj.summary  && (
-        <section className={styles.s1}>
-          <h2>Profession Summary</h2>
-          <p>{professionalSummaryObj.summary}</p>
-        </section>
-      )}
+        {professionalSummaryObj.summary && (
+          <section className={styles.s1}>
+            <h2>Profession Summary</h2>
+            <p>{professionalSummaryObj.summary}</p>
+          </section>
+        )}
 
-      {/* Professional Experience */}
-      <ProfessionalExpPreview objArr={professionalExpObj.arrOfObj} />
+        {/* Professional Experience */}
+        <ProfessionalExpPreview objArr={professionalExpObj.arrOfObj} />
 
-      {/* Projects */}
-      <ProjectPreview />
+        {/* Projects */}
+        <ProjectPreview />
 
-      {/* Education */}
-      <EducationPreview />
+        {/* Education */}
+        <EducationPreview />
 
-      {/* Skills */}
-      {skills.length > 0 && (
-        <div className={styles.s1}>
-          <h2>Skills</h2>
-          <ul className={styles.itemsContainer}>
-            {skills.map((item, id) => (
-              <li key={id}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      )}
+        {/* Skills */}
+        {skills.length > 0 && (
+          <div className={styles.s1}>
+            <h2>Skills</h2>
+            <ul className={styles.itemsContainer}>
+              {skills.map((item, id) => (
+                <li key={id}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

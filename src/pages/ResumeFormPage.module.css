@@ -1,0 +1,24 @@
+.resumeContainerWrapper{
+  max-width: 90rem;
+  margin: auto;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.resumeFormContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  background-color: rgb(250, 248, 248);
+}
+
+@media (max-width: 768px) {
+  .resumeFormContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap:30px;
+  }
+}

@@ -2,20 +2,21 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 import styles from "./ResumeCard.module.css";
-import trashIcon from "../../../../public/trash.png";
-import editIcon from "../../../../public/edit.png";
+import { trashIcon, editIcon } from "../../../../public/index.jsx";
 import ResumesContext from "../../../context/ResumeStore";
 
-export default function ResumeCard({ item }) {
-  const { deleteResume } = useContext(ResumesContext);
+export default function ResumeCard() {
+  const { resumes, deleteResume } = useContext(ResumesContext);
   const navigate = useNavigate();
 
   return (
-    <button key={item.id} onClick={() => navigate(`/resume/${item.id}`)}>
-      <div className={styles.editButtons}>
-        <div
-          className={styles.icon}
-          onClick={(e) => {
+    <>
+    {resumes.map((item) => (
+      <button className={styles.cardBtn} key={item.id} onClick={() => navigate(`/resume/${item.id}`)}>
+        <div className={styles.editButtons}>
+          <div
+            className={styles.icon}
+            onClick={(e) => {
             e.stopPropagation();
             deleteResume(item.id);
           }}
@@ -29,5 +30,7 @@ export default function ResumeCard({ item }) {
       <div className={styles.btnName}>{item.title}</div>
       <div className={styles.date}>Updated on {item.date}</div>
     </button>
-  );
+    ))}
+    </>
+  )
 }

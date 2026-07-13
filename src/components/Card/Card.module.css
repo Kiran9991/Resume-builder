@@ -1,0 +1,24 @@
+.card{
+  height: 12rem;
+  width: 9rem;
+  background-color: white;
+  border: 1px dashed var(--border-color);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  padding: 5px;
+  align-items: center;
+}
+
+.card:hover {
+  border: 1px dashed rgb(47, 156, 192);
+  box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.3);
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+.container1 button:nth-child(2):hover {
+    border: 1px dashed rgb(207, 36, 199);
+}

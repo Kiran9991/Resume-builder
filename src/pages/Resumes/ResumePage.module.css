@@ -1,0 +1,21 @@
+.container {
+  max-width: 80rem;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+
+.container hr {
+  margin: 1.5rem 0;
+  border: 1px solid var(--border-color);
+  max-width: 305px;
+}
+
+.subContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+
+
+

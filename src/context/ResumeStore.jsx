@@ -8,6 +8,9 @@ export function ResumesProvider({ children }) {
   const lsResumes = JSON.parse(localStorage.getItem("resumes")) || [];
 
   const [resumes, setResumes] = useState(lsResumes);
+  const [count, setCount] = useState(0);
+
+  const limitOfResumeContent = 5;
 
   useEffect(() => {
     localStorage.setItem("resumes", JSON.stringify(resumes));
@@ -33,8 +36,19 @@ export function ResumesProvider({ children }) {
     setResumes((prev) => [...prev.filter((ele) => ele.id != id)]);
   };
 
+  const increamentCount = () => {
+    count < limitOfResumeContent && setCount((prev) => prev + 1);
+  };
+
+  const decrementCount = () => {
+    count > 0 && setCount((prev) => prev - 1);
+  };
+
   const obj = {
     resumes,
+    count,
+    increamentCount: increamentCount,
+    decrementCount: decrementCount,
     addResume: addResumeHandler,
     deleteResume: deleteResumeHandler
   };

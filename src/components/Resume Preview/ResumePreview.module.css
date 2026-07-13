@@ -1,3 +1,10 @@
+.previewcontainer {
+    height: 100%;
+  width: 100%;
+  max-width: 54rem;
+  box-sizing: border-box;
+}
+
 .previewSection {
   height: 100%;
   width: 100%;
@@ -8,8 +15,52 @@
   border: 1px solid #d1d5db;
 }
 
+.btnSection {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 20px;
+  gap: 10px;
+  right: 0;
+}
+
+.downloadbtn {
+  background-color: rgb(181, 236, 181);
+  color: green;
+}
+
+.downloadbtn:hover {
+  transition: 0.5s ease;
+  box-shadow: 0 0 0 1px green;
+}
+
+.share {
+  background-color: rgb(225, 225, 252);
+  color: blue;
+}
+
+.share:hover {
+  transition: 0.5s ease;
+  box-shadow: 0 0 0 1px blue;
+}
+
+.public {
+  background-color: rgb(238, 213, 238);
+  color: rgb(128, 25, 128);
+}
+
+.public:hover {
+  transition: 0.5s ease;
+  box-shadow: 0 0 0 1px rgb(85, 26, 85);
+}
+
 .s1 h2 {
   color: var(--success-color);
+}
+
+.s1 p {
+  overflow-wrap: break-word;
 }
 
 .container {

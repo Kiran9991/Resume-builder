@@ -1,0 +1,47 @@
+.backBtn {
+  position: relative;
+  left:0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  color: var(--text-gray-color);
+  margin-bottom: 20px;
+}
+
+.backBtn:hover {
+  color: black;
+}
+
+.formSection {
+  position: relative;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 0.5rem;
+  height: 100%;
+  width: 100%;
+  max-width: 32rem;
+  padding: 10px 20px;
+  border: 1px solid #d1d5db;
+  border-top: 0;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .formSection {
+    margin: auto;
+    width: 100%;
+    max-width: 700px;
+  }
+
+  /* .resumeFormContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap:30px;
+  } */
+}
+
+.saveBth {
+  padding: 15px 0px;
+}

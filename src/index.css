@@ -10,6 +10,7 @@
   --bg-color: oklch(98.5% .002 247.839);
   --violet-color: #a40ab3;
   --light-violet-color: #f0d8f1;
+  --text-gray-color: #6b7280;
 }
 
 button {
@@ -51,4 +52,8 @@ textArea {
 textArea:focus {
   border-color: #3b82f6;
   box-shadow: 0 0 0 2px #3b82f6;
+}
+
+p{
+  overflow-wrap: break-word;
 }
