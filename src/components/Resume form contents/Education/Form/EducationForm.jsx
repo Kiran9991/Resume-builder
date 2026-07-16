@@ -5,8 +5,7 @@ import FormWithTitle from "../../Form/FormWithTitle";
 import EducationContext from "../../../../context/educationStore";
 
 export default function EducationForm({ item }) {
-  const { updateEducationForm, deleteEducationForm } =
-    useContext(EducationContext);
+  const { addEducationForm } = useContext(EducationContext);
 
   return (
     <FormWithTitle

@@ -5,29 +5,18 @@ const EducationContext = createContext();
 export default EducationContext;
 
 export function EducationProvider({ children }) {
-  const LsEducation =
-    JSON.parse(localStorage.getItem("educationDetails")) || [];
+  const [ educationDetails, setEducationDetails ] = useState([]);
 
-  const [ educationDetails, setEducationDetails ] = useState(LsEducation);
+  const addEducationFormHandler = (id) => {
+    setEducationDetails(prev => {
+      const exist = prev.find(item => item.resumeId == id);
 
-  useEffect(() => {
-    localStorage.setItem("educationDetails", JSON.stringify(educationDetails));
-  }, [educationDetails]);
+      if(exist) {
+        const newId = exist.arrOfData.length + 1;
+        return [...prev, { ...exist, arrOfData: [...exist.arrOfData, { formId: newId },], },]
+      }
 
-  const addEducationFormHandler = () => {
-    setEducationDetails((prev) => {
-      const newId = prev.length > 0 ? prev[prev.length - 1].id + 1 : 1;
-      return [
-        ...prev,
-        {
-          id: newId,
-          name: "",
-          degree: "",
-          fieldOfStudy: "",
-          dateComplete: "",
-          gpa: "",
-        },
-      ];
+      return [...prev, { resumeId: id, arrOfData: [ { formId: 1 }, ], }, ];
     });
   };
 

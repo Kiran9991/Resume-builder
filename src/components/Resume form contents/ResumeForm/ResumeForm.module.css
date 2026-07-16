@@ -1,17 +1,24 @@
+.resumeFormContainer {
+  height: 100%;
+  width: 100%;
+  max-width: 31rem;
+  box-sizing: border-box;
+}
+
 .backBtn {
   position: relative;
-  left:0;
   display: flex;
   align-items: center;
   gap: 10px;
   cursor: pointer;
   color: var(--text-gray-color);
-  margin-bottom: 20px;
+  margin-bottom: 35px;
 }
 
 .backBtn:hover {
   color: black;
 }
+
 
 .formSection {
   position: relative;
@@ -33,13 +40,6 @@
     width: 100%;
     max-width: 700px;
   }
-
-  /* .resumeFormContainer {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap:30px;
-  } */
 }
 
 .saveBth {

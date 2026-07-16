@@ -36,6 +36,10 @@ export function ResumesProvider({ children }) {
     setResumes((prev) => [...prev.filter((ele) => ele.id != id)]);
   };
 
+  const resetCount = () => {
+    setCount(0);
+  }
+
   const increamentCount = () => {
     count < limitOfResumeContent && setCount((prev) => prev + 1);
   };
@@ -49,6 +53,7 @@ export function ResumesProvider({ children }) {
     count,
     increamentCount: increamentCount,
     decrementCount: decrementCount,
+    resetCount: resetCount,
     addResume: addResumeHandler,
     deleteResume: deleteResumeHandler
   };

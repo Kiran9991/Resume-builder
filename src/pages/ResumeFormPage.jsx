@@ -7,6 +7,7 @@ export default function ResumeFormPage() {
   return (
     <div className={styles.resumeContainerWrapper}>
       <div className={styles.resumeFormContainer}>
+        <Resumeform />
         <ResumePreview />
       </div>
     </div>
