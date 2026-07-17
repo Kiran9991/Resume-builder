@@ -9,16 +9,15 @@ export default function Education() {
   const { educationDetails, addEducationForm } = useContext(EducationContext);
   const { id } = useParams();
 
-  const educationDetailsObj = educationDetails.find(item => item.resumeId == id);
-
-  if (!educationDetailsObj && educationDetailsObj.arrOfObj.length == 0) {
-    content = <EmptyItems text1={"education"} text2={"Add Education"} />;
-  }
-
-  let content = educationDetailsObj.arrOfObj.map((item) => (
+  const educationDetailsObj = educationDetails.find(item => item.resumeId == id) || { arrOfData: [] };
+  
+  let content = educationDetailsObj.arrOfData.map((item) => (
     <EducationForm key={item.formId} item={item} />
   ));
-
+  
+  if (educationDetailsObj.arrOfData.length == 0) {
+    content = <EmptyItems text1={"education"} text2={"Add Education"} />;
+  }
 
   return (
     <FormTitle

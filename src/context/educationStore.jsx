@@ -12,17 +12,17 @@ export function EducationProvider({ children }) {
       const exist = prev.find(item => item.resumeId == id);
 
       if(exist) {
-        const newId = exist.arrOfData.length + 1;
-        return [...prev, { ...exist, arrOfData: [...exist.arrOfData, { formId: newId },], },]
+        const newId = exist.arrOfData[exist.arrOfData.length - 1].formId + 1;
+        return prev.map(item => item.resumeId == id ? { ...item, arrOfData: [...item.arrOfData, { formId: newId }, ], } : item);
       }
 
       return [...prev, { resumeId: id, arrOfData: [ { formId: 1 }, ], }, ];
     });
   };
 
-  const updateEducationFormHandler = (id, obj) => {
+  const updateEducationFormHandler = (resumeId, formId, obj) => {
     setEducationDetails((prev) =>
-      prev.map((item) => (item.id == id ? { ...item, ...obj } : item)),
+      prev.map((item) => (item.resumeId == resumeId ? { ...item, arrOfData: } : item)),
     );
   };
 
